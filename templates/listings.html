@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Listings - Home Share</title>
+</head>
+<body>
+    <header>
+        <h1>Home Share 🏠</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('landing') }}">Home</a></li>
+                <li><a href="{{ url_for('search') }}">Search</a></li>
+                <li><a href="{{ url_for('listings') }}">Listings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="listings">
+        <h2>Available Homes</h2>
+        <!-- Listings will be dynamically generated here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Home Share | Together, We Build Tomorrow</p>
+    </footer>
+</body>
+</html>
