@@ -5,30 +5,28 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 
-const user = {
-	name: "Tom Cook",
-	email: "tom@example.com",
-	imageUrl:
-		"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+// const user = {
+// 	name: "Tom Cook",
+// 	email: "tom@example.com",
+// 	imageUrl:
+// 		"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+// };
 const navigation = [
-	{ name: "Dashboard", href: "#", current: true },
-	{ name: "Team", href: "#", current: false },
-	{ name: "Projects", href: "#", current: false },
-	{ name: "Calendar", href: "#", current: false },
+	{ name: "Home", href: "#", current: true },
+	{ name: "Refugee Resources", href: "#", current: false },
 ];
-const userNavigation = [
-	{ name: "Your Profile", href: "#" },
-	{ name: "Settings", href: "#" },
-	{ name: "Sign out", href: "#" },
-];
+// const userNavigation = [
+// 	{ name: "Your Profile", href: "#" },
+// 	{ name: "Settings", href: "#" },
+// 	{ name: "Sign out", href: "#" },
+// ];
 
 const Header = () => {
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
 			{({ open }) => (
 				<>
-					<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
 								<div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -52,11 +50,10 @@ const Header = () => {
 									</Disclosure.Button>
 								</div>
 								<div className="flex flex-shrink-0 items-center">
-									<img
-										className="h-8 w-auto"
-										src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-										alt="Your Company"
-									/>
+									<h1 className="text-1xl -mt-3"> {"<🤍/>"}</h1>
+										<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
+											Shelter
+										</h3>
 								</div>
 								<div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
 									{navigation.map((item) => (
@@ -66,7 +63,7 @@ const Header = () => {
 											className={cn(
 												item.current
 													? "bg-gray-900 text-white"
-													: "text-gray-300 hover:bg-gray-700 hover:text-white",
+													: "text-white hover:bg-gray-900 hover:text-white",
 												"rounded-md px-3 py-2 text-sm font-medium"
 											)}
 											aria-current={
@@ -81,22 +78,34 @@ const Header = () => {
 								</div>
 							</div>
 							<div className="flex items-center">
-								<div className="flex-shrink-0">
+							<div className="flex-shrink-0 pr-5">
 									<button
 										type="button"
-										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 									>
 										<PlusIcon
 											className="-ml-0.5 h-5 w-5"
 											aria-hidden="true"
 										/>
-										New Job
+										Become a Host
+									</button>
+								</div>
+								<div className="flex-shrink-0">
+									<button
+										type="button"
+										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+									>
+										<PlusIcon
+											className="-ml-0.5 h-5 w-5"
+											aria-hidden="true"
+										/>
+										Login
 									</button>
 								</div>
 								<div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
 									<button
 										type="button"
-										className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+										className="relative rounded-full bg-white p-1 text-gray-900 hover:text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 									>
 										<span className="absolute -inset-1.5" />
 										<span className="sr-only">
@@ -111,7 +120,7 @@ const Header = () => {
 									{/* Profile dropdown */}
 									<Menu as="div" className="relative ml-3">
 										<div>
-											<Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+											{/* <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 												<span className="absolute -inset-1.5" />
 												<span className="sr-only">
 													Open user menu
@@ -121,7 +130,7 @@ const Header = () => {
 													src={user.imageUrl}
 													alt=""
 												/>
-											</Menu.Button>
+											</Menu.Button> */}
 										</div>
 										<Transition
 											as={Fragment}
@@ -133,7 +142,7 @@ const Header = () => {
 											leaveTo="transform opacity-0 scale-95"
 										>
 											<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-												{userNavigation.map((item) => (
+												{/* {userNavigation.map((item) => (
 													<Menu.Item key={item.name}>
 														{({ active }) => (
 															<a
@@ -149,7 +158,7 @@ const Header = () => {
 															</a>
 														)}
 													</Menu.Item>
-												))}
+												))} */}
 											</Menu.Items>
 										</Transition>
 									</Menu>
@@ -181,20 +190,20 @@ const Header = () => {
 						</div>
 						<div className="border-t border-gray-700 pb-3 pt-4">
 							<div className="flex items-center px-5 sm:px-6">
-								<div className="flex-shrink-0">
+								{/* <div className="flex-shrink-0">
 									<img
 										className="h-10 w-10 rounded-full"
 										src={user.imageUrl}
 										alt=""
 									/>
-								</div>
+								</div> */}
 								<div className="ml-3">
-									<div className="text-base font-medium text-white">
+									{/* <div className="text-base font-medium text-white">
 										{user.name}
-									</div>
-									<div className="text-sm font-medium text-gray-400">
+									</div> */}
+									{/* <div className="text-sm font-medium text-gray-400">
 										{user.email}
-									</div>
+									</div> */}
 								</div>
 								<button
 									type="button"
@@ -211,7 +220,7 @@ const Header = () => {
 								</button>
 							</div>
 							<div className="mt-3 space-y-1 px-2 sm:px-3">
-								{userNavigation.map((item) => (
+								{/* {userNavigation.map((item) => (
 									<Disclosure.Button
 										key={item.name}
 										as="a"
@@ -220,7 +229,7 @@ const Header = () => {
 									>
 										{item.name}
 									</Disclosure.Button>
-								))}
+								))} */}
 							</div>
 						</div>
 					</Disclosure.Panel>

@@ -13,6 +13,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+				sans: ["Montserrat", "sans-serif"],
+			},
+			colors: {
+				primary: "white",
+				secondary: "#BC13FE",
+				background: "#162C5D",
+				links: "#81869C",
+			},
     },
   },
   plugins: [],
