@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 // const user = {
 // 	name: "Tom Cook",
@@ -11,9 +12,10 @@ import { cn } from "@/utils/cn";
 // 	imageUrl:
 // 		"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 // };
+
 const navigation = [
-	{ name: "Home", href: "#", current: true },
-	{ name: "Refugee Resources", href: "#", current: false },
+	{ name: "Home", href: "/", current: true },
+	{ name: "Refugee Resources", href: "/resources", current: false },
 ];
 // const userNavigation = [
 // 	{ name: "Your Profile", href: "#" },
@@ -25,7 +27,7 @@ const Header = () => {
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
 			{({ open }) => (
-				<>
+				<div>
 					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
@@ -50,14 +52,16 @@ const Header = () => {
 									</Disclosure.Button>
 								</div>
 								<div className="flex flex-shrink-0 items-center">
-									<h1 className="text-1xl -mt-3"> {"<🤍/>"}</h1>
-										<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
-											Shelter
-										</h3>
+									<h1 className="text-1xl -mt-3 text-white">
+										{"<🤍/>"}
+									</h1>
+									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
+										Shelter
+									</h3>
 								</div>
 								<div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
 									{navigation.map((item) => (
-										<a
+										<Link
 											key={item.name}
 											href={item.href}
 											className={cn(
@@ -73,37 +77,39 @@ const Header = () => {
 											}
 										>
 											{item.name}
-										</a>
+										</Link>
 									))}
 								</div>
 							</div>
 							<div className="flex items-center">
-							<div className="flex-shrink-0 pr-5">
-									<button
+								<div className="flex-shrink-0 pr-5">
+									<Link
 										type="button"
 										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+										href="/hosts/apply"
 									>
 										<PlusIcon
 											className="-ml-0.5 h-5 w-5"
 											aria-hidden="true"
 										/>
 										Become a Host
-									</button>
+									</Link>
 								</div>
 								<div className="flex-shrink-0">
-									<button
+									<Link
 										type="button"
 										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+										href="/login"
 									>
 										<PlusIcon
 											className="-ml-0.5 h-5 w-5"
 											aria-hidden="true"
 										/>
 										Login
-									</button>
+									</Link>
 								</div>
 								<div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
-									<button
+									{/* <button
 										type="button"
 										className="relative rounded-full bg-white p-1 text-gray-900 hover:text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 									>
@@ -115,7 +121,7 @@ const Header = () => {
 											className="h-6 w-6"
 											aria-hidden="true"
 										/>
-									</button>
+									</button> */}
 
 									{/* Profile dropdown */}
 									<Menu as="div" className="relative ml-3">
@@ -167,7 +173,7 @@ const Header = () => {
 						</div>
 					</div>
 
-					<Disclosure.Panel className="md:hidden">
+					<Disclosure.Panel className="md:hidden ">
 						<div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
 							{navigation.map((item) => (
 								<Disclosure.Button
@@ -233,7 +239,7 @@ const Header = () => {
 							</div>
 						</div>
 					</Disclosure.Panel>
-				</>
+				</div>
 			)}
 		</Disclosure>
 	);
