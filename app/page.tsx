@@ -1,5 +1,11 @@
+"use client";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+
+import type { Database } from "../lib/database.types";
+import Login from "./login/page";
 
 const links = [
 	{ name: "Why Host?", href: "/hosts" },
@@ -9,6 +15,23 @@ const links = [
 ];
 
 export default function Home() {
+	const supabase = createClientComponentClient<Database>();
+	const router = useRouter();
+
+	const email = "ali@gmail.com";
+	const password = "123456";
+
+	const handleSignUp = async () => {
+		await supabase.auth.signUp({
+			email,
+			password,
+			options: {
+				emailRedirectTo: `${location.origin}/auth/callback`,
+			},
+		});
+		router.refresh();
+	};
+
 	return (
 		<div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
 			<img
@@ -40,6 +63,12 @@ export default function Home() {
 				</div>
 				<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-16 pt-20">
+						{/* <button
+							className="bg-white text-black p-2"
+							onClick={() => handleSignUp()}
+						>
+							test
+						</button> */}
 						{links.map((link) => (
 							<Link
 								key={link.name}
