@@ -5,6 +5,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+// import AuthButtonServer from "./auth-button/auth-button-server";
+
+import type { Session } from "@supabase/auth-helpers-nextjs";
+import AuthButton from "../auth-button";
 
 // const user = {
 // 	name: "Tom Cook",
@@ -23,9 +27,9 @@ const navigation = [
 // 	{ name: "Sign out", href: "#" },
 // ];
 
-const Header = () => {
+const HeaderClient = ({ session }: { session: Session | null }) => {
 	return (
-		<Disclosure as="nav" className="bg-gray-800">
+		<Disclosure as="nav" className="bg-background">
 			{({ open }) => (
 				<div>
 					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background">
@@ -96,20 +100,10 @@ const Header = () => {
 									</Link>
 								</div>
 								<div className="flex-shrink-0">
-									<Link
-										type="button"
-										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-										href="/login"
-									>
-										<PlusIcon
-											className="-ml-0.5 h-5 w-5"
-											aria-hidden="true"
-										/>
-										Login
-									</Link>
+									<AuthButton session={session} />
 								</div>
-								<div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
-									{/* <button
+								{/* <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
+									<button
 										type="button"
 										className="relative rounded-full bg-white p-1 text-gray-900 hover:text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 									>
@@ -121,12 +115,12 @@ const Header = () => {
 											className="h-6 w-6"
 											aria-hidden="true"
 										/>
-									</button> */}
+									</button>
 
-									{/* Profile dropdown */}
+									// Profile dropdown
 									<Menu as="div" className="relative ml-3">
 										<div>
-											{/* <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+											<Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 												<span className="absolute -inset-1.5" />
 												<span className="sr-only">
 													Open user menu
@@ -136,7 +130,7 @@ const Header = () => {
 													src={user.imageUrl}
 													alt=""
 												/>
-											</Menu.Button> */}
+											</Menu.Button>
 										</div>
 										<Transition
 											as={Fragment}
@@ -148,7 +142,7 @@ const Header = () => {
 											leaveTo="transform opacity-0 scale-95"
 										>
 											<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-												{/* {userNavigation.map((item) => (
+												{userNavigation.map((item) => (
 													<Menu.Item key={item.name}>
 														{({ active }) => (
 															<a
@@ -164,11 +158,11 @@ const Header = () => {
 															</a>
 														)}
 													</Menu.Item>
-												))} */}
+												))}
 											</Menu.Items>
 										</Transition>
 									</Menu>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>
@@ -245,4 +239,4 @@ const Header = () => {
 	);
 };
 
-export { Header };
+export { HeaderClient };

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Database } from "../lib/database.types";
-import Login from "./login/page";
 
 const links = [
 	{ name: "Why Host?", href: "/hosts" },
