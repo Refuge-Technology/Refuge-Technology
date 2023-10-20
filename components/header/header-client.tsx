@@ -17,10 +17,6 @@ import AuthButton from "../auth-button";
 // 		"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 // };
 
-const navigation = [
-	{ name: "Home", href: "/", current: true },
-	{ name: "Refugee Resources", href: "/resources", current: false },
-];
 // const userNavigation = [
 // 	{ name: "Your Profile", href: "#" },
 // 	{ name: "Settings", href: "#" },
@@ -28,11 +24,23 @@ const navigation = [
 // ];
 
 const HeaderClient = ({ session }: { session: Session | null }) => {
+	const navigation = [
+		{ name: "Home", href: session ? "/ngo/dashboard" : "/", current: true },
+		{
+			name: "Refugee Resources",
+			href: session ? "/resources" : "/",
+			current: false,
+		},
+	];
+
 	return (
-		<Disclosure as="nav" className="bg-background">
+		<Disclosure
+			as="nav"
+			className="bg-background-600 border-background-700 border-b-2"
+		>
 			{({ open }) => (
 				<div>
-					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background">
+					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background-600">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
 								<div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -55,14 +63,17 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 										)}
 									</Disclosure.Button>
 								</div>
-								<div className="flex flex-shrink-0 items-center">
+								<Link
+									href="/"
+									className="flex flex-shrink-0 items-center cursor-pointer"
+								>
 									<h1 className="text-1xl -mt-3 text-white">
 										{"<🤍/>"}
 									</h1>
 									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
 										Shelter
 									</h3>
-								</div>
+								</Link>
 								<div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
 									{navigation.map((item) => (
 										<Link
@@ -86,19 +97,21 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 								</div>
 							</div>
 							<div className="flex items-center">
-								<div className="flex-shrink-0 pr-5">
-									<Link
-										type="button"
-										className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-										href="/hosts/apply"
-									>
-										<PlusIcon
-											className="-ml-0.5 h-5 w-5"
-											aria-hidden="true"
-										/>
-										Become a Host
-									</Link>
-								</div>
+								{!session && (
+									<div className="flex-shrink-0 pr-5">
+										<Link
+											type="button"
+											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background-600 shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+											href="/hosts/apply"
+										>
+											<PlusIcon
+												className="-ml-0.5 h-5 w-5"
+												aria-hidden="true"
+											/>
+											Become a Host
+										</Link>
+									</div>
+								)}
 								<div className="flex-shrink-0">
 									<AuthButton session={session} />
 								</div>
