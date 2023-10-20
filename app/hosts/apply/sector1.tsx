@@ -4,14 +4,14 @@ import Formcard from "./formcard";
 
 const Sector1 = () => {
 	return (
-		<div className="grid w-full display-flex justify-center grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+		<div className="grid w-full display-flex justify-center pt-8 grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
 			<div className="pt-4 sm:pt-0 px-4 sm:px-0">
 				<h2 className="text-base font-semibold leading-7 text-primary">
-					Profile
+					Room/Home Information
 				</h2>
-				<p className="mt-1 text-sm leading-6 text-links">
-					This information will be displayed publicly so be careful
-					what you share.
+				<p className="mt-5 text-sm leading-6 text-white">
+					Please describe the shelter you are offering in as much detail as possible with supporting photos and media.
+					This information will be used by and displayed to NGOs and their workers to match your host listing with displaced people. 
 				</p>
 			</div>
 			{/* 
@@ -19,29 +19,6 @@ const Sector1 = () => {
 				<div className="px-4 py-6 sm:p-8">
 					<div className="grid  max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"> */}
 			<Formcard>
-				<div className="sm:col-span-4">
-					<label
-						htmlFor="Email"
-						className="block text-sm font-medium leading-6 text-gray-900"
-					>
-						Email
-					</label>
-					<div className="mt-2">
-						<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-							<span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
-								http://
-							</span>
-							<input
-								type="text"
-								name="Email"
-								id="Email"
-								className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-								placeholder="www.example.com"
-							/>
-						</div>
-					</div>
-				</div>
-
 				<div className="col-span-full">
 					<label
 						htmlFor="about"
@@ -59,29 +36,8 @@ const Sector1 = () => {
 						/>
 					</div>
 					<p className="mt-3 text-sm leading-6 text-gray-600">
-						Write a few sentences about yourself.
+						Please describe the home/shelter/room in detail for aid worker review.
 					</p>
-				</div>
-
-				<div className="col-span-full">
-					<label
-						htmlFor="photo"
-						className="block text-sm font-medium leading-6 text-gray-900"
-					>
-						Photo
-					</label>
-					<div className="mt-2 flex items-center gap-x-3">
-						<UserCircleIcon
-							className="h-12 w-12 text-gray-300"
-							aria-hidden="true"
-						/>
-						<button
-							type="button"
-							className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-						>
-							Change
-						</button>
-					</div>
 				</div>
 
 				<div className="col-span-full">
@@ -89,7 +45,7 @@ const Sector1 = () => {
 						htmlFor="cover-photo"
 						className="block text-sm font-medium leading-6 text-gray-900"
 					>
-						Cover photo
+						Photos
 					</label>
 					<div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
 						<div className="text-center">
@@ -117,6 +73,9 @@ const Sector1 = () => {
 							</p>
 						</div>
 					</div>
+					<p className="mt-3 text-sm leading-6 text-gray-600">
+						Please provide at least two photos of the room/home/shelter that you are offering.
+					</p>
 				</div>
 			</Formcard>
 			{/* </div> */}
