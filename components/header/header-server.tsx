@@ -1,19 +1,18 @@
+import React from "react";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { LoginForm } from "./login-form";
-import { redirect } from 'next/navigation';
+import { HeaderClient } from "./header-client";
 
 import type { Database } from "@/lib/database.types";
 
-export default async function Login() {
+const HeaderServer = async () => {
 	const supabase = createServerComponentClient<Database>({ cookies });
+
 	const {
 		data: { session },
 	} = await supabase.auth.getSession();
 
-	if (session) {
-		redirect("/ngo/dashboard");
-	}
+	return <HeaderClient session={session} />;
+};
 
-	return <LoginForm />;
-}
+export default HeaderServer;
