@@ -22,11 +22,26 @@ const LoginForm = () => {
 	const searchParams = useSearchParams();
 	const [errorMessage, setErrorMessage] = useState("");
 
+	return (
+		<>
+			<div className="flex bg-un-image bg-no-repeat bg-30 bg-left-bottom h-full flex-1 flex-col justify-center align-center px-6 py-12 lg:px-8 ">
+				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
+					<h2 className="text-background-500 max-w-sm text-center font-semibold text-2xl italic">
+						{"Shelter"}
+					</h2>
+					<h2 className="mt-5 text-center text-2xl leading-9 tracking-tight text-secondary">
+						NGO & Humanitarian Worker Login
+					</h2>
+					<p className="text-sm text-background-600 text-center mt-5">
+						This login is reserved for NGO & Humanitarian workers. Host login is coming soon.
+					</p>
+				</div>
+        
 	useEffect(() => {
 		const error = searchParams.get("error") || "";
 		setErrorMessage(error);
 	}, []);
-
+        
 	return (
 		<div className="flex flex-col gap-2">
 			{errorMessage && (
@@ -84,7 +99,11 @@ const LoginForm = () => {
 							</a>
 						</div>
 					</div>
-
+					<p className="flex justify-center items-center mt-10 text-center text-sm gap-2 text-gray-600">
+						No NGO Account Yet?
+						<a
+							href="mailto:refuge_technology@proton.me"
+							className="leading-6 text-links hover:text-links"
 					<div className="pt-3">
 						<button
 							type="submit"
