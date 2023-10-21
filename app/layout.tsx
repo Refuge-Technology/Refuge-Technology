@@ -6,7 +6,7 @@ import HeaderServer from "@/components/header/header-server";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Shelter - Host Refugees",
+	title: "Shelter - Host Refugees and Displaced People",
 	description: "Host refugees and displaced people.",
 };
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="h-full bg-background-600">
+		<html lang="en" className="h-full bg-background-800">
 			<body className={inter.className}>
 				<HeaderServer />
 				{children}

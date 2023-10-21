@@ -7,21 +7,23 @@ const HostApplicationForm = () => {
 	return (
 		<div className="flex justify-center w-full ">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
-				<h2 className="text-4xl text-white sm:text-6xl bg-background-600">
+				<h2 className="text-4xl w-49 text-white sm:text-6xl bg-background-600 italic w-50">
 								Apply to Host
 				</h2>
-				<p className="mt-6 text-lg leading-8 text-primary border-none w-50">
+				<p className="mt-6 text-lg leading-8 text-secondary border-none w-50">
 								Apply and register interest to host displaced people in your home. Your application will be reviewed and you will be contacted by the
 								<em> Shelter </em> team to proceed to the next steps with guidance from humanitarian NGOs (Non Government Organizations) and aid groups. The application 
-								reviewal process typically takes 1-2 days depending on the volume of applications and demand for shelter.
+								reviewal process typically takes 1-2 days depending on the volume of applications and demand for housing.
 				</p>
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
-						<h2 className="text-base font-semibold leading-7 text-primary">
+						<h2 className="text-base font-semibold leading-7 text-secondary">
 							Personal Information
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-links">
-							Use a permanent address where you can receive mail.
+							Please fill out your personal information as it appears on your respective government issued record or identification.
+							Your personal information is kept secure and is displayed solely to the Shelter team and to vetted humanitarian workers.
+							Shelter will never share or sell your information or data to third parties.
 						</p>
 					</div>
 
@@ -97,9 +99,13 @@ const HostApplicationForm = () => {
 									autoComplete="country-name"
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
 								>
-									<option>United States</option>
-									<option>Canada</option>
-									<option>Mexico</option>
+									<option> Afghanistan </option>
+									<option> Israel </option>
+									<option> Libya </option>
+									<option> Morocco </option>
+									<option> Palestinian Territories </option>
+									<option> Somalia </option>
+									<option> Sudan </option>
 								</select>
 							</div>
 						</div>
@@ -218,7 +224,7 @@ const HostApplicationForm = () => {
 
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
-						<h2 className="text-base font-semibold leading-7 text-primary">
+						<h2 className="text-base font-semibold leading-7 text-secondary">
 							Notifications
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-links">

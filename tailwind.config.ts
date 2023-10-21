@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,6 +13,7 @@ const config: Config = {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				"un-image": "url('../public/assets/un-icon.svg')"
 			},
 			fontFamily: {
 				sans: ["Montserrat", "sans-serif"],
@@ -34,14 +36,17 @@ const config: Config = {
 					200: "#a2abbe",
 					300: "#73809e",
 					400: "#45567d",
-					500: "#162c5d",
-					600: "#12234a",
+					500: "#250332",
+					600: "#031723",
 					700: "#0d1a38",
-					800: "#091225",
+					800: "#F7F7F7",
 					900: "#040913",
 				},
-				links: "#81869C",
+				links: "#250332",
 			},
+			backgroundSize: {
+				"30": "30%"
+			}
 		},
 	},
 	plugins: [],
