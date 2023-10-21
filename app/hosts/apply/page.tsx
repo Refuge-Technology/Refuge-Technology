@@ -8,12 +8,17 @@ const HostApplicationForm = () => {
 		<div className="flex justify-center w-full ">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
 				<h2 className="text-4xl text-white sm:text-6xl bg-background-600">
-								Apply to Host
+					Apply to Host
 				</h2>
-				<p className="mt-6 text-lg leading-8 text-primary border-none w-50">
-								Apply and register interest to host displaced people in your home. Your application will be reviewed and you will be contacted by the
-								<em> Shelter </em> team to proceed to the next steps with guidance from humanitarian NGOs (Non Government Organizations) and aid groups. The application 
-								reviewal process typically takes 1-2 days depending on the volume of applications and demand for shelter.
+				<p className="mt-6 text-lg leading-8 text-justify prose text-primary border-none w-50">
+					Apply and register interest to host displaced people in your
+					home. Your application will be reviewed and you will be
+					contacted by the
+					<em> Shelter </em> team to proceed to the next steps with
+					guidance from humanitarian NGOs (Non Government
+					Organizations) and aid groups. The application reviewal
+					process typically takes 1-2 days depending on the volume of
+					applications and demand for shelter.
 				</p>
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
@@ -176,25 +181,25 @@ const HostApplicationForm = () => {
 							</div>
 						</div>
 						<div className="col-span-full">
-					<label
-						htmlFor="photo"
-						className="block text-sm font-medium leading-6 text-gray-900"
-					>
-						Photo
-					</label>
-					<div className="mt-2 flex">
-						<UserCircleIcon
-							className="h-12 w-12 text-gray-300"
-							aria-hidden="true"
-						/>
-						<button
-							type="button"
-							className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-						>
-							Change
-						</button>
-					</div>
-				</div>
+							<label
+								htmlFor="photo"
+								className="block text-sm font-medium leading-6 text-gray-900"
+							>
+								Photo
+							</label>
+							<div className="mt-2 flex">
+								<UserCircleIcon
+									className="h-12 w-12 text-gray-300"
+									aria-hidden="true"
+								/>
+								<button
+									type="button"
+									className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+								>
+									Change
+								</button>
+							</div>
+						</div>
 						{/* </div>
 						</div> */}
 						{/* <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
