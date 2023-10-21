@@ -14,12 +14,26 @@ export async function POST(request: Request) {
 		cookies: () => cookieStore,
 	});
 
-	await supabase.auth.signInWithPassword({
-		email,
-		password,
-	});
-
-	return NextResponse.redirect(requestUrl.origin, {
-		status: 301,
-	});
+	try {
+		const { error } = await supabase.auth.signInWithPassword({
+			email,
+			password,
+		});
+		if (error) {
+			return NextResponse.redirect(
+				`${requestUrl.origin}/login?error=${error.message}`,
+				{
+					status: 301,
+				}
+			);
+		}
+		return NextResponse.redirect(requestUrl.origin, {
+			status: 301,
+		});
+	} catch (error) {
+		return NextResponse.json(
+			{ message: "An unexpected error occurred" },
+			{ status: 500 }
+		);
+	}
 }

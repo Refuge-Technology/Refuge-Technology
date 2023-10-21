@@ -182,25 +182,25 @@ const HostApplicationForm = () => {
 							</div>
 						</div>
 						<div className="col-span-full">
-					<label
-						htmlFor="photo"
-						className="block text-sm font-medium leading-6 text-gray-900"
-					>
-						Photo
-					</label>
-					<div className="mt-2 flex">
-						<UserCircleIcon
-							className="h-12 w-12 text-gray-300"
-							aria-hidden="true"
-						/>
-						<button
-							type="button"
-							className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-						>
-							Change
-						</button>
-					</div>
-				</div>
+							<label
+								htmlFor="photo"
+								className="block text-sm font-medium leading-6 text-gray-900"
+							>
+								Photo
+							</label>
+							<div className="mt-2 flex">
+								<UserCircleIcon
+									className="h-12 w-12 text-gray-300"
+									aria-hidden="true"
+								/>
+								<button
+									type="button"
+									className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+								>
+									Change
+								</button>
+							</div>
+						</div>
 						{/* </div>
 						</div> */}
 						{/* <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
