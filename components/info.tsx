@@ -30,8 +30,8 @@ export default function Info() {
 							<div className="max-w-xl">
 								<p className="mt-6">
 									Shelter is an application that allows
-									people to host refugees and displaced
-									persons in their homes. Hosts can apply and
+									individuals to host refugees and displaced
+									people in their homes. Hosts can apply and
 									go through a vetting process to ensure
 									safety standards are met.
 								</p>
@@ -57,8 +57,8 @@ export default function Info() {
 						</div>
 						<div className="mt-10 flex">
 							<a
-								href="/hosts/apply"
-								className="text-links font-semibold leading-7 text-indigo-600"
+								href="#"
+								className="text-base font-semibold leading-7 text-indigo-600"
 							>
 								Host Now <span aria-hidden="true">&rarr;</span>
 							</a>
