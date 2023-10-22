@@ -95,11 +95,11 @@ const LoginForm = () => {
 					</div>
 				</form>
 			</div>
-			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-gray-400">
+			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-background-500">
 				No NGO Account Yet?
 				<a
 					href="mailto:refuge_technology@proton.me"
-					className="leading-6 text-primary hover:text-links"
+					className="leading-6 text-background-500 hover:text-links"
 				>
 					Contact Us
 				</a>
