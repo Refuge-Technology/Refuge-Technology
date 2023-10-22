@@ -7,10 +7,10 @@ const HostApplicationForm = () => {
 	return (
 		<div className="flex justify-center w-full ">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
-				<h2 className="text-4xl text-white sm:text-6xl bg-background-600">
+				<h2 className="text-4xl text-white sm:text-6xl bg-background-500">
 					Apply to Host
 				</h2>
-				<p className="mt-6 text-lg leading-8 text-justify prose text-primary border-none w-50">
+				<p className="mt-6 text-md leading-8 text-justify prose text-secondary border-none w-50">
 					Apply and register interest to host displaced people in your
 					home. Your application will be reviewed and you will be
 					contacted by the
@@ -22,11 +22,13 @@ const HostApplicationForm = () => {
 				</p>
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
-						<h2 className="text-base font-semibold leading-7 text-primary">
+						<h2 className="text-base font-semibold leading-7 text-secondary">
 							Personal Information
 						</h2>
-						<p className="mt-1 text-sm leading-6 text-links">
-							Use a permanent address where you can receive mail.
+						<p className="mt-1 text-sm leading-6 text-links	">
+							Please provide your personal information as it is displayed on your government issued identification. This data will be securely used for vetting by the
+							Shelter team and displayed to humanitarian workers. Shelter will never share or sell your data with third parties. 
+
 						</p>
 					</div>
 
@@ -223,7 +225,7 @@ const HostApplicationForm = () => {
 
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
-						<h2 className="text-base font-semibold leading-7 text-primary">
+						<h2 className="text-base font-semibold leading-7 text-secondary">
 							Notifications
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-links">

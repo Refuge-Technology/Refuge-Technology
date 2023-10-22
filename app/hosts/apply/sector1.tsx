@@ -6,10 +6,10 @@ const Sector1 = () => {
 	return (
 		<div className="grid w-full display-flex justify-center pt-8 grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
 			<div className="pt-4 sm:pt-0 px-4 sm:px-0">
-				<h2 className="text-base font-semibold leading-7 text-primary">
+				<h2 className="text-base font-semibold leading-7 text-secondary">
 					Room/Home Information
 				</h2>
-				<p className="mt-5 text-sm leading-6 text-white">
+				<p className="mt-5 text-sm leading-6 text-links">
 					Please describe the shelter you are offering in as much detail as possible with supporting photos and media.
 					This information will be used by and displayed to NGOs and their workers to match your host listing with displaced people. 
 				</p>

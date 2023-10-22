@@ -11,6 +11,9 @@ export default function DashboardLayout({
 				<Sidebar />
 			</div>
 			<div className="grow">
+			<h2 className="pt-10 text-center px-2 text-3xl text-secondary sm:text-3xl">
+				New Hosts
+			</h2>
 			{children}
 			</div>
 		</div>
