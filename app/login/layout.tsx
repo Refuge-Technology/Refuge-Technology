@@ -9,7 +9,7 @@ export default function LoginLayout({
 				<h2 className="text-primary  text-center font-semibold text-2xl">
 					{"<🤍/>"}
 				</h2>
-				<h2 className="mt-10 text-center text-2xl leading-9 tracking-tight text-primary">
+				<h2 className="mt-2 text-center text-2xl leading-9 tracking-tight text-primary">
 					NGO Login
 				</h2>
 			</div>

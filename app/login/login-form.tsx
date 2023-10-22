@@ -95,7 +95,7 @@ const LoginForm = () => {
 					</div>
 				</form>
 			</div>
-			<p className="flex justify-center items-center mt-10 text-center text-sm gap-2 text-gray-400">
+			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-gray-400">
 				No NGO Account Yet?
 				<a
 					href="mailto:refuge_technology@proton.me"
