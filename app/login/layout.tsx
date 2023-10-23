@@ -10,8 +10,7 @@ export default function LoginLayout({
 					NGO & Humanitarian Login
 				</h2>
 				<p className="mt-6 text-sm text-center leading-5 text-links">
-					This login is reserved for NGO and humanitarian workers.
-					Host login is coming soon.
+					This login is reserved for humanatarian organizations and NGOs who have been verified by a Shelter moderator. 
 				</p>
 			</div>
 

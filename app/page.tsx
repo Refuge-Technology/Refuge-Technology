@@ -32,13 +32,20 @@ export default function Home() {
 							Refugees Need Your Help
 						</h2>
 						<p className="mt-6 text-lg leading-8 text-primary">
-							Displaced people in Palestine, Israel, Morocco,
-							Libya, Sudan, and Afghanistan desperately need
-							temporary housing.
+							In 2022, the number of new refugees reached an all-time high. Every day, hundreds, if not thousands, of ordinary, well-meaning individuals are displaced from their homes due to terrorism, war, and disease.
+							They desperately need our help.
 						</p>
 						<p className="mt-6 text-lg leading-8 text-primary">
-							If you reside within one of these countries, please
-							consider hosting displaced people in your home.
+							Shelter is an online application designed to connect hosts who have spare capacity in their homes with refugees who need a temporary place to stay. It has been directly inspired by TakeShelter, which was created and maintained by InternetActivism and designed primarily for Sudanese Refugees.
+							Shelter is maintained by RefugeTechnology, a decentralized group of developers making open-source humanatarian software. We are currently focusing on refugees and hosts in Israel, Palestine, Syria, and Afganistan. 
+							If you currently reside in these countries, please consider offering your home by signing up as a host.
+						</p>
+						<h3 className = " w-fit  text-center px-2 text-4xl font-bold text-white sm:text-6xl bg-background-600 italic">
+							Why the above regions?
+							</h3>
+						<p className="mt-6 text-lg leading-8 text-primary">
+							In the aftermath of the terrorist attacks perputated by the Hamas group, an all out conflict has broken out in the already tense region comprising of Palestine and Israel. Thousands of innocent civllians, many of them children, have lost their homes and way of life as a result.
+							This conflict has also detracted from other humanatarian crises, such as the earthquakes striking Afganistan and Syria.
 						</p>
 					</div>
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
