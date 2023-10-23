@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 				}
 			);
 		}
-		return NextResponse.redirect(requestUrl.origin, {
+		return NextResponse.redirect(`${requestUrl.origin}/ngo/dashboard`, {
 			status: 301,
 		});
 	} catch (error) {

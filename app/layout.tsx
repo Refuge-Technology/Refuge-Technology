@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className="h-full bg-background-600">
-			<body className={cn("flex flex-col h-full", inter.className)}>
+			<body className={cn("flex flex-col min-h-full", inter.className)}>
 				<HeaderServer />
 				{children}
 			</body>

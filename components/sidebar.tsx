@@ -41,14 +41,14 @@ const teams = [
 
 export default function Sidebar() {
 	return (
-		<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
-			<div className="flex h-16 shrink-0 items-center">
+		<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-background-600 pt-6 px-6  ">
+			{/* <div className="flex h-16 shrink-0 items-center">
 				<img
 					className="h-8 w-auto"
 					src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
 					alt="Your Company"
 				/>
-			</div>
+			</div> */}
 			<nav className="flex flex-1 flex-col">
 				<ul role="list" className="flex flex-1 flex-col gap-y-7">
 					<li>
@@ -59,8 +59,8 @@ export default function Sidebar() {
 										href={item.href}
 										className={cn(
 											item.current
-												? "bg-gray-800 text-white"
-												: "text-gray-400 hover:text-white hover:bg-gray-800",
+												? "bg-background-800 text-white"
+												: "text-gray-400 hover:text-white hover:bg-background-800",
 											"group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
 										)}
 									>
@@ -71,7 +71,7 @@ export default function Sidebar() {
 										{item.name}
 										{item.count ? (
 											<span
-												className="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-gray-900 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-white ring-1 ring-inset ring-gray-700"
+												className="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-links px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-white ring-1 ring-inset ring-background-800"
 												aria-hidden="true"
 											>
 												{item.count}
@@ -82,6 +82,7 @@ export default function Sidebar() {
 							))}
 						</ul>
 					</li>
+					<span className="w-full border-t border-background-400" />
 					<li>
 						<div className="text-xs font-semibold leading-6 text-gray-400">
 							Your teams
@@ -93,8 +94,8 @@ export default function Sidebar() {
 										href={team.href}
 										className={cn(
 											team.current
-												? "bg-gray-800 text-white"
-												: "text-gray-400 hover:text-white hover:bg-gray-800",
+												? "bg-background-800 text-white"
+												: "text-gray-400 hover:text-white hover:bg-background-800",
 											"group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
 										)}
 									>
@@ -112,15 +113,15 @@ export default function Sidebar() {
 					<li className="-mx-6 mt-auto">
 						<a
 							href="#"
-							className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800"
+							className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-background-800"
 						>
 							<img
 								className="h-8 w-8 rounded-full bg-gray-800"
 								src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 								alt=""
 							/>
-							<span className="sr-only">Your profile</span>
-							<span aria-hidden="true">Tom Cook</span>
+							<span className="sr-only">Settings</span>
+							<span aria-hidden="true">Settings</span>
 						</a>
 					</li>
 				</ul>

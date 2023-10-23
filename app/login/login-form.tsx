@@ -35,7 +35,7 @@ const LoginForm = () => {
 					onClick={() => setErrorMessage("")}
 				/>
 			)}
-			<div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+			<div className="bg-white px-6 py-12 shadow-sm ring-1 ring-gray-900/5 sm:rounded-lg sm:px-12">
 				<form className="space-y-6" action="/auth/login" method="POST">
 					<div>
 						<label
@@ -78,7 +78,7 @@ const LoginForm = () => {
 						<div className="text-sm">
 							<a
 								href="#"
-								className="text-background-600 float-right hover:text-black-500"
+								className="text-background-600 float-right hover:text-black"
 							>
 								Forgot password?
 							</a>
@@ -95,11 +95,11 @@ const LoginForm = () => {
 					</div>
 				</form>
 			</div>
-			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-background-500">
+			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-links">
 				No NGO Account Yet?
 				<a
 					href="mailto:refuge_technology@proton.me"
-					className="leading-6 text-background-500 hover:text-links"
+					className="leading-6 text-links hover:text-primary underline underline-offset-2"
 				>
 					Contact Us
 				</a>
