@@ -28,7 +28,7 @@ export default function Home() {
 				></div>
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="flex flex-col mx-auto lg:mx-0">
-						<h2 className=" w-fit  text-center px-2 text-4xl font-bold text-white sm:text-6xl bg-background-600 italic">
+						<h2 className=" w-fit  text-center px-2 text-4xl font-bold text-white sm:text-6xl bg-background-500 italic">
 							Refugees Need Your Help
 						</h2>
 						<p className="mt-6 text-lg leading-8 text-primary">

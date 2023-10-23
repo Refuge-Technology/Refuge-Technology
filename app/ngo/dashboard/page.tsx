@@ -15,9 +15,9 @@ const Dashboard = async () => {
 	}
 
 	return (
-		<div className="flex flex-col gap-8 pt-4 sm:p-8 ">
-			<h1 className="text-xl px-2 text-slate-200 font-semibold tracking-wide">Hosts</h1>
-			<span className="w-full border-b border-background-400" />
+		<div className="flex flex-col gap-8 sm:p-2 ">
+			<h1 className="text-2xl px-2 text-primary">Hosts</h1>
+			<span className="w-full border-b border-link" />
 			<HostList />
 		</div>
 	);

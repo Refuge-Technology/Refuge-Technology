@@ -31,6 +31,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 			current: true,
 		},
 		{
+			name: "How to Host",
+			href: "/how-to-host",
+			current: false,
+		},
+		{
 			name: "Refugee Resources",
 			href: session ? "/resources" : "/",
 			current: false,
