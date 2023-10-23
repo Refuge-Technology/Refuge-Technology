@@ -46,8 +46,11 @@ export default function Home() {
 						<p className="mt-6 text-lg leading-8 text-primary">
 							In the aftermath of the terrorist attacks perputated by the Hamas group, an all out conflict has broken out in the already tense region comprising of Palestine and Israel. Thousands of innocent civllians, many of them children, have lost their homes and way of life as a result.
 							This conflict has also detracted from other humanatarian crises, such as the earthquakes striking Afganistan and Syria.
+							We created Shelter to help all civilians, regardless of their religion or country of origin, to find refuge from crises, both natural and man-made. 
+							While our team is currently focused on these regions, we welcome help from anyone, and encourage other developers to host forks focusing on alternative regions.
 						</p>
 					</div>
+			
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-16 pt-20">
 							{/* <button

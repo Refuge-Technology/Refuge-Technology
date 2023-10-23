@@ -13,6 +13,13 @@ export default function HowToHost() {
 			  <p className="mt-6 text-base leading-7 text-gray-600">
 				The following page explains how to host displaced people using the Shelter platform.
 			  </p>
+			  <p className="mt-6 text-base leading-7 text-gray-600">
+				To sign up as a host family, simply fill out the application linked on the main page. Make sure to have a government-verified ID with you, and a live video recording so that we know you are a real person.
+				You will then be matched with a asylum-seeker through one of our humanatarian partners. 
+			  </p>
+			  <p className="mt-6 text-base leading-7 text-gray-600">
+				Your data always belongs to you. We will never sell, share, or otherwise manipulate your data in any way without your explicit consent.
+			  </p>
 			</div>
 			<div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
 			  <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
