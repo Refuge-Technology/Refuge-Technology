@@ -5,7 +5,10 @@ import HeaderServer from "@/components/header/header-server";
 import { cn } from "@/utils/cn";
 import { Footer } from "@/components/footer";
 
+
 const inter = Inter({ subsets: ["latin"] });
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
 	title: "Shelter - Host Refugees",
