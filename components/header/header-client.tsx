@@ -25,7 +25,11 @@ import AuthButton from "../auth-button";
 
 const HeaderClient = ({ session }: { session: Session | null }) => {
 	const navigation = [
-		{ name: "Home", href: session ? "/ngo/dashboard" : "/", current: true },
+		{
+			name: session ? "Dashboard" : "Home",
+			href: session ? "/ngo/dashboard" : "/",
+			current: true,
+		},
 		{
 			name: "How to Host",
 			href: "/how-to-host",
@@ -41,7 +45,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 	return (
 		<Disclosure
 			as="nav"
-			className="bg-background-600 border-background-700 border-b-2"
+			className="bg-background-600 shadow-background-800 shadow-sm"
 		>
 			{({ open }) => (
 				<div>

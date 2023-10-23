@@ -28,14 +28,14 @@ export default function Info() {
 								What is Shelter?
 							</h1>
 							<div className="max-w-xl">
-								<p className="mt-6">
+								<p className=" text-justify mt-6">
 									Shelter is an application that allows
 									individuals to host refugees and displaced
 									people in their homes. Hosts can apply and
 									go through a vetting process to ensure
 									safety standards are met.
 								</p>
-								<p className="mt-8">
+								<p className="  text-justify mt-8">
 									Once vetted, hosts can choose to host
 									refugees and displaced people in their
 									homes. Hosts can choose to host for a period
@@ -44,7 +44,7 @@ export default function Info() {
 									aid organizations such as the UNHCR, the
 									IRC, and the Red Cross.
 								</p>
-								<p className="mt-8">
+								<p className="  text-justify mt-8">
 									Et vitae blandit facilisi magna lacus
 									commodo. Vitae sapien duis odio id et. Id
 									blandit molestie auctor fermentum dignissim.
