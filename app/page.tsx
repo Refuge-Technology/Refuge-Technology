@@ -1,6 +1,7 @@
 import Link from "next/link";
-
 import Info from "@/components/info";
+import { Footer } from "@/components/footer";
+import Title from "@/components/title";
 
 const links = [
 	{ name: "Why Host?", href: "/hosts" },
@@ -28,15 +29,15 @@ export default function Home() {
 				></div>
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="flex flex-col mx-auto lg:mx-0">
-						<h2 className=" w-fit  text-center px-2 text-4xl font-bold text-white sm:text-6xl bg-background-500 italic">
+						<Title className="px-2 py-1.5 text-4xl font-bold sm:text-6xl">
 							Refugees Need Your Help
-						</h2>
-						<p className="mt-6 text-lg leading-8 text-primary">
+						</Title>
+						<p className="mt-6 text-lg max-w-prose leading-8 text-primary">
 							Displaced people in Palestine, Israel, Morocco,
 							Libya, Sudan, and Afghanistan desperately need
 							temporary housing.
 						</p>
-						<p className="mt-6 text-lg leading-8 text-primary">
+						<p className="mt-6 text-lg  max-w-prose leading-8 text-primary">
 							If you reside within one of these countries, please
 							consider hosting displaced people in your home.
 						</p>
@@ -69,6 +70,7 @@ export default function Home() {
 				</div>
 			</div>
 			<Info />
+			<Footer />
 		</>
 	);
 }

@@ -1,12 +1,13 @@
 import Sidebar from "@/components/sidebar";
 
+
 export default function DashboardLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="flex grow">
+		<div className="flex bg-slate-100 grow">
 			<div className="flex w-72 flex-col">
 				<Sidebar />
 			</div>

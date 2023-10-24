@@ -13,7 +13,7 @@ const config: Config = {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				"un-image": "url('../public/assets/un-icon.svg')"
+				"un-image": "url('../public/assets/un-icon.svg')",
 			},
 			fontFamily: {
 				sans: ["Montserrat", "sans-serif"],
@@ -31,17 +31,29 @@ const config: Config = {
 					800: "#4b0866",
 					900: "#260433",
 				},
+				tertiary: {
+					100: "#f0d3d2",
+					200: "#e1a8a6",
+					300: "#d37c79",
+					400: "#c4514d",
+					500: "#b52520",
+					600: "#911e1a",
+					700: "#6d1613",
+					800: "#480f0d",
+					900: "#240706",
+				},
 				background: {
 					100: "#d0d5df",
 					200: "#a2abbe",
 					300: "#73809e",
 					400: "#45567d",
-					500: "#B52520",
+					500: "#162c5d",
 					600: "#031723",
 					700: "#162B5D",
 					800: "#091225",
 					900: "#fafafa",
 				},
+
 				links: "#81869C",
 			},
 		},

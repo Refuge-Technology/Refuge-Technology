@@ -7,7 +7,7 @@ type TProps = {
 
 const ErrorToast = ({ error, onClick }: TProps) => {
 	return (
-		<div className="rounded-md bg-red-50 p-4">
+		<div className="rounded-md bg-red-50 ring-2 ring-red-300 p-4">
 			<div className="flex">
 				<div className="flex-shrink-0">
 					<XCircleIcon

@@ -3,6 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import HostList from "@/components/host-list";
+import HostProfile from "@/components/host-profile";
 
 const Dashboard = async () => {
 	const supabase = createServerComponentClient({ cookies });
@@ -19,6 +20,7 @@ const Dashboard = async () => {
 			<h1 className="text-2xl px-2 text-primary">Hosts</h1>
 			<span className="w-full border-b border-link" />
 			<HostList />
+			<HostProfile />
 		</div>
 	);
 };

@@ -31,11 +31,6 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 			current: true,
 		},
 		{
-			name: "How to Host",
-			href: "/how-to-host",
-			current: false,
-		},
-		{
 			name: "Refugee Resources",
 			href: session ? "/resources" : "/",
 			current: false,
@@ -45,11 +40,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 	return (
 		<Disclosure
 			as="nav"
-			className="bg-background-600 shadow-background-800 shadow-sm"
+			className="bg-slate-100 shadow-background-800 shadow-sm"
 		>
 			{({ open }) => (
 				<div>
-					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background-600">
+					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background-500">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
 								<div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -111,7 +106,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 										<Link
 											type="button"
 											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background-600 shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-											href="/hosts/apply"
+											href="/hosts"
 										>
 											<PlusIcon
 												className="-ml-0.5 h-5 w-5"

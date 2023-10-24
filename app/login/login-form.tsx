@@ -35,12 +35,12 @@ const LoginForm = () => {
 					onClick={() => setErrorMessage("")}
 				/>
 			)}
-			<div className="bg-white px-6 py-12 shadow-sm ring-1 ring-gray-900/5 sm:rounded-lg sm:px-12">
+			<div className="bg-white px-6 py-12 shadow-md ring-1 ring-gray-900/5 sm:rounded-lg sm:px-12">
 				<form className="space-y-6" action="/auth/login" method="POST">
 					<div>
 						<label
 							htmlFor="email"
-							className="block text-sm font-medium leading-6 text-background-600"
+							className="block text-sm font-medium leading-6 text-background-700"
 						>
 							Email Address
 						</label>
@@ -95,11 +95,11 @@ const LoginForm = () => {
 					</div>
 				</form>
 			</div>
-			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-links">
+			<p className="flex justify-center items-center mt-4 text-center text-sm gap-2 text-background-700">
 				No NGO Account Yet?
 				<a
 					href="mailto:refuge_technology@proton.me"
-					className="leading-6 text-links hover:text-primary underline underline-offset-2"
+					className="leading-6 hover:text-black underline underline-offset-2"
 				>
 					Contact Us
 				</a>
