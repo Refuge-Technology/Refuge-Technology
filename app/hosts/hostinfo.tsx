@@ -29,7 +29,7 @@ const HostInfo = () => {
 					The Host Interview Process:
 					</h1>
 					<ul
-						location="list"
+						role="list"
 						className="mt-8 max-w-xl space-y-8 text-gray-600"
 					>
 						<li className="flex gap-x-3">
@@ -66,7 +66,7 @@ const HostInfo = () => {
 							/>
 							<span>
 								<strong className="font-semibold text-gray-900 max-w-prose">
-									Reviewal and Acceptance into the Host Database:
+									Reviewal and Acceptance into the Host Database
 								</strong>{" "}
 								After extensive reviewal by the Shelter team and rigorous security verification, you will either receive a confirmation of rejection or acceptance. If accepted, your host and
 								contact information will be available in a secure database accessible only by NGOs and humanitarian workers.
