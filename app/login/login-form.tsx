@@ -51,7 +51,7 @@ const LoginForm = () => {
 								type="email"
 								autoComplete="email"
 								required
-								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500 sm:text-sm sm:leading-6"
+								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 							/>
 						</div>
 					</div>
@@ -72,7 +72,7 @@ const LoginForm = () => {
 								type="password"
 								autoComplete="current-password"
 								required
-								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500-700 sm:text-sm sm:leading-6"
+								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500-700 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 							/>
 						</div>
 						<div className="text-sm">

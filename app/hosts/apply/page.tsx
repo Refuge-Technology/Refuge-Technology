@@ -19,10 +19,10 @@ const HostApplicationForm = () => {
 		<div className="flex justify-center w-full">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-					<h2 className="text-4xl text-white sm:text-6xl bg-red-700 italic">
+					<h2 className="text-4xl text-white sm:text-6xl bg-red-700 italic max-sm:text-center max-sm:py-0">
 						Apply to Host
 					</h2>
-					<p className="mt-6 text-md leading-8 text-justify max-w-prose text-secondary border-none w-50">
+					<p className="mt-6 text-md leading-8 text-justify max-w-prose text-secondary border-none w-50 max-sm:justify-center max-sm:px-5 max-sm:py-5">
 						Apply and register interest to host displaced people in your
 						home. Your application will be reviewed and you will be
 						contacted by the
@@ -62,7 +62,7 @@ const HostApplicationForm = () => {
 									name="first-name"
 									id="first-name"
 									autoComplete="given-name"
-									className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -80,7 +80,7 @@ const HostApplicationForm = () => {
 									name="last-name"
 									id="last-name"
 									autoComplete="family-name"
-									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ const HostApplicationForm = () => {
 									name="email"
 									type="email"
 									autoComplete="email"
-									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 								/>
 							</div>
 						</div>
@@ -115,7 +115,7 @@ const HostApplicationForm = () => {
 									id="country"
 									name="country"
 									autoComplete="country-name"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
 								>
 								{getCountries()}
 								</select>
@@ -135,7 +135,7 @@ const HostApplicationForm = () => {
 									name="street-address"
 									id="street-address"
 									autoComplete="street-address"
-									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -153,7 +153,7 @@ const HostApplicationForm = () => {
 									name="city"
 									id="city"
 									autoComplete="address-level2"
-									className="block p-5 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block p-5 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -171,7 +171,7 @@ const HostApplicationForm = () => {
 									name="region"
 									id="region"
 									autoComplete="address-level1"
-									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 								/>
 							</div>
 						</div>
@@ -189,7 +189,7 @@ const HostApplicationForm = () => {
 									name="postal-code"
 									id="postal-code"
 									autoComplete="postal-code"
-									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 								/>
 							</div>
 						</div>
@@ -207,7 +207,7 @@ const HostApplicationForm = () => {
 								/>
 								<input
 									type="file"
-									className="rounded-md bg-white px-2.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+									className="rounded-md bg-white px-2.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 max-sm:border-2 max-sm:border-gray"
 								/>
 							</div>
 						</div>
