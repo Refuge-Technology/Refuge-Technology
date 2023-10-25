@@ -1,6 +1,6 @@
 export default function Info() {
 	return (
-		<div className="bg-white py-24 sm:py-32">
+		<div className=" py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
 					<div className="lg:pr-4">
@@ -24,41 +24,32 @@ export default function Info() {
 					</div>
 					<div>
 						<div className="text-base leading-7 text-gray-700 lg:max-w-lg">
-							<h1 className="mt-2 text-3xl font-bold tracking-tight text-background-600 sm:text-4xl">
+							<h1 className="mt-2 text-3xl tracking-tigh sm:text-4xl">
 								What is Shelter?
 							</h1>
 							<div className="max-w-xl">
-								<p className=" text-justify mt-6">
-									Shelter is an application that allows
-									individuals to host refugees and displaced
-									people in their homes. Hosts can apply and
-									go through a vetting process to ensure
-									safety standards are met.
+								<p className="text-justify hyphens-auto mt-6 max-w-prose">
+								Shelter is an online application designed to connect hosts who have spare capacity in their homes with refugees who need a temporary place to stay. It has been directly inspired by TakeShelter, which was created 
+								and maintained by InternetActivism.
 								</p>
-								<p className="  text-justify mt-8">
+								<p className= "text-justify hyphens-auto mt-6 max-w-prose">
+								This application is maintained by <a href="https://refugetechnology.org"> Refuge Technology</a>, a group of developers making open-source humanitarian software.
+								</p>
+								<p className="text-justify mt-8 max-w-prose">
 									Once vetted, hosts can choose to host
 									refugees and displaced people in their
 									homes. Hosts can choose to host for a period
 									of time, or indefinitely. The host will then
 									be matched to displaced persons by reputable
-									aid organizations such as the UNHCR, the
+									aid organizations such as the UN, the
 									IRC, and the Red Cross.
-								</p>
-								<p className="  text-justify mt-8">
-									Et vitae blandit facilisi magna lacus
-									commodo. Vitae sapien duis odio id et. Id
-									blandit molestie auctor fermentum dignissim.
-									Lacus diam tincidunt ac cursus in vel.
-									Mauris varius vulputate et ultrices hac
-									adipiscing egestas. Iaculis convallis ac
-									tempor et ut. Ac lorem vel integer orci.
 								</p>
 							</div>
 						</div>
 						<div className="mt-10 flex">
 							<a
-								href="#"
-								className="text-base font-semibold leading-7 text-indigo-600"
+								href="/hosts"
+								className="text-base font-semibold leading-7 text-red-600"
 							>
 								Host Now <span aria-hidden="true">&rarr;</span>
 							</a>

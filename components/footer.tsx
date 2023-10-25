@@ -3,7 +3,7 @@ const Footer = () => {
 		<footer className="bg-background-600">
 			<div className="max-w-full px-6 py-4 mx-auto md:flex md:items-center text-xs md:justify-between text-white lg:px-8">
 				<div className="flex justify-center space-x-6 md:order-2">
-					<p>{"<🤍/>"} - Shelter -  <a href="https://refugetechnology.org" className="hover-links underline underline-offset-2">Refuge Technology</a> initiative.</p>
+					<p>{"<🤍/>"} - Shelter - a <a href="https://refugetechnology.org" className="hover-links underline underline-offset-2">Refuge Technology</a> initiative.</p>
 				</div>
 				<div className="mt-8 md:order-1 md:mt-0">
 					<p className="text-xs leading-5 text-center text-white">

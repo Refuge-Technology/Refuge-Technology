@@ -51,7 +51,7 @@ const LoginForm = () => {
 								type="email"
 								autoComplete="email"
 								required
-								className="block w-full rounded-sm border-1.5 border-background-600 bg-white/5 px-1 py-1.5 text-background-600 shadow-sm ring-1 ring-inset ring-background-600/10 focus:ring-2 focus:ring-inset focus:ring-background-600-700 sm:text-sm sm:leading-6"
+								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500 sm:text-sm sm:leading-6"
 							/>
 						</div>
 					</div>
@@ -60,7 +60,7 @@ const LoginForm = () => {
 						<div className="flex items-center justify-between">
 							<label
 								htmlFor="password"
-								className="block text-sm font-medium leading-6 text-background-600"
+								className="block text-sm font-medium leading-6 text-background-700"
 							>
 								Password
 							</label>
@@ -72,13 +72,13 @@ const LoginForm = () => {
 								type="password"
 								autoComplete="current-password"
 								required
-								className="block w-full rounded-sm border-1.5 border-background-600 bg-white/5 px-1 py-1.5 text-background-600 shadow-sm ring-1 ring-inset ring-background-600/10 focus:ring-2 focus:ring-inset focus:ring-background-600-700 sm:text-sm sm:leading-6"
+								className="block w-full rounded-sm border-1.5 border-background-500 bg-white/5 px-1 py-1.5 text-background-700 shadow-sm ring-1 ring-inset ring-background-500/10 focus:ring-2 focus:ring-inset focus:ring-background-500-700 sm:text-sm sm:leading-6"
 							/>
 						</div>
 						<div className="text-sm">
 							<a
 								href="#"
-								className="text-background-600 float-right hover:text-black"
+								className="text-background-700 float-right hover:text-background-800"
 							>
 								Forgot password?
 							</a>
@@ -88,7 +88,7 @@ const LoginForm = () => {
 					<div className="pt-3">
 						<button
 							type="submit"
-							className="flex w-full justify-center rounded-sm bg-background-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600"
+							className="flex w-full justify-center rounded-sm bg-background-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow hover:bg-background-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600"
 						>
 							Sign in
 						</button>

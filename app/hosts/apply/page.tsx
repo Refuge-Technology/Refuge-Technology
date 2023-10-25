@@ -5,21 +5,23 @@ import { UserCircleIcon } from "@heroicons/react/20/solid";
 
 const HostApplicationForm = () => {
 	return (
-		<div className="flex justify-center w-full ">
+		<div className="flex justify-center w-full">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
-				<h2 className="text-4xl text-white sm:text-6xl bg-background-500">
-					Apply to Host
-				</h2>
-				<p className="mt-6 text-md leading-8 text-justify prose text-secondary border-none w-50">
-					Apply and register interest to host displaced people in your
-					home. Your application will be reviewed and you will be
-					contacted by the
-					<em> Shelter </em> team to proceed to the next steps with
-					guidance from humanitarian NGOs (Non Government
-					Organizations) and aid groups. The application reviewal
-					process typically takes 1-2 days depending on the volume of
-					applications and demand for shelter.
-				</p>
+				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
+					<h2 className="text-4xl text-white sm:text-6xl bg-background-500">
+						Apply to Host
+					</h2>
+					<p className="mt-6 text-md leading-8 text-justify max-w-prose text-secondary border-none w-50">
+						Apply and register interest to host displaced people in your
+						home. Your application will be reviewed and you will be
+						contacted by the
+						<em> Shelter </em> team to proceed to the next steps with
+						guidance from humanitarian NGOs (Non Government
+						Organizations) and aid groups. The application reviewal
+						process typically takes 1-2 days depending on the volume of
+						applications and demand for shelter.
+					</p>
+				</div>
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
 						<h2 className="text-base font-semibold leading-7 text-secondary">
@@ -104,9 +106,14 @@ const HostApplicationForm = () => {
 									autoComplete="country-name"
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
 								>
-									<option>United States</option>
-									<option>Canada</option>
-									<option>Mexico</option>
+									<option>Afghanistan</option>
+									<option>Egypt</option>
+									<option>Israel</option>
+									<option>Libya</option>
+									<option>Morocco</option>
+									<option>Palestine</option>
+									<option>Somalia</option>
+									<option>Sudan</option>
 								</select>
 							</div>
 						</div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Info from "@/components/info";
 import { Footer } from "@/components/footer";
 import Title from "@/components/title";
+import { OurResponse } from "@/components/ourresponse";
 
 const links = [
 	{ name: "Why Host?", href: "/hosts" },
@@ -70,6 +71,7 @@ export default function Home() {
 				</div>
 			</div>
 			<Info />
+			<OurResponse />
 			<Footer />
 		</>
 	);

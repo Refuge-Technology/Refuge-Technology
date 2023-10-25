@@ -1,26 +1,18 @@
-import React from "react";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import HostList from "@/components/host-list";
-import HostProfile from "@/components/host-profile";
+"use client"
+import React, {useState} from "react";
+import HostList from "./host-list";""
+import HostProfile from "./host-profile"
 
-const Dashboard = async () => {
-	const supabase = createServerComponentClient({ cookies });
-	const {
-		data: { session },
-	} = await supabase.auth.getSession();
 
-	if (!session) {
-		redirect("/login");
-	}
-
+const Dashboard = () => {
+	const [open, setOpen] = useState(false);
+	
 	return (
 		<div className="flex flex-col gap-8 sm:p-2 ">
 			<h1 className="text-2xl px-2 text-primary">Hosts</h1>
 			<span className="w-full border-b border-link" />
-			<HostList />
-			<HostProfile />
+			<HostList onClick={() => setOpen(!open)}/>
+			<HostProfile open={open} setOpen={setOpen} />
 		</div>
 	);
 };

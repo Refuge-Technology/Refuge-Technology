@@ -9,13 +9,13 @@ export default function HowToHost() {
 				<div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
 						<div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-							<Title className="text-3xl bg-background-500 sm:text-4xl">How to Host Displaced People</Title>
-							<p className="mt-6 text-xl leading-8 text-background-700">
+							<Title className="text-3x text-white sm:text-4xl">How to Host Displaced People</Title>
+							<p className="mt-6 text-xl leading-8 text-secondary">
 								Hosting displaced people and refugees during a
 								disaster or conflict is an enormous service for
 								humanitarian relief.
 							</p>
-							<p className="mt-6 text-base leading-7 text-background-600">
+							<p className="mt-6 leading-7 text-secondary">
 								The following page explains how to host
 								displaced people using the Shelter platform.
 							</p>
