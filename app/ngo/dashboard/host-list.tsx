@@ -2,11 +2,11 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const people = [
 	{
-		name: "Leslie Alexander",
-		email: "leslie.alexander@example.com",
-		role: "Co-Founder / CEO",
+		name: "John Doe",
+		email: "johndoe@example.com",
+		location: "Gaza City - Occupied Palestine",
 		imageUrl:
-			"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+			"https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		href: "#",
 		lastSeen: "3h ago",
 		lastSeenDateTime: "2023-01-23T13:23Z",
@@ -61,7 +61,11 @@ const people = [
 	},
 ];
 
-export default function HostList() {
+type TProps = {
+	onClick: () => void;
+};
+
+export default function HostList({onClick}: TProps) {
 	return (
 		<ul
 			role="list"
@@ -71,6 +75,7 @@ export default function HostList() {
 				<li
 					key={person.email}
 					className="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6"
+					onClick={onClick}
 				>
 					<div className="flex min-w-0 gap-x-4">
 						<img
@@ -98,7 +103,7 @@ export default function HostList() {
 					<div className="flex shrink-0 items-center gap-x-4">
 						<div className="hidden sm:flex sm:flex-col sm:items-end">
 							<p className="text-sm leading-6 text-gray-900">
-								{person.role}
+								{person.location}
 							</p>
 							{person.lastSeen ? (
 								<p className="mt-1 text-xs leading-5 text-gray-500">

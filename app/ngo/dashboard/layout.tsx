@@ -1,12 +1,26 @@
 import Sidebar from "@/components/sidebar";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function DashboardLayout({
+
+export default async function DashboardLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+
+	const supabase = createServerComponentClient({ cookies });
+	const {
+		data: { session },
+	} = await supabase.auth.getSession();
+
+	if (!session) {
+		redirect("/login");
+	}
+
 	return (
-		<div className="flex grow">
+		<div className="flex bg-slate-100 grow">
 			<div className="flex w-72 flex-col">
 				<Sidebar />
 			</div>

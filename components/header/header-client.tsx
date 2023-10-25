@@ -1,7 +1,7 @@
 "use client";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
@@ -31,30 +31,30 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 			current: true,
 		},
 		{
-			name: "How to Host",
-			href: "/how-to-host",
+			name: "Refugee Resources",
+			href: "/resources",
 			current: false,
 		},
 		{
-			name: "Refugee Resources",
-			href: session ? "/resources" : "/",
-			current: false,
-		},
+			name: "Host Now",
+			href: "/hosts",
+			current: false
+		}
 	];
 
 	return (
 		<Disclosure
 			as="nav"
-			className="bg-background-600 shadow-background-800 shadow-sm"
+			className="z-10"
 		>
 			{({ open }) => (
-				<div>
-					<div className="mx-auto px-4 sm:px-6 lg:px-8 bg-background-600">
+				<>
+					<div className="mx-auto px-4 sm:px-6 shadow-lglg:px-8 bg-background-600">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
 								<div className="-ml-2 mr-2 flex items-center md:hidden">
 									{/* Mobile menu button */}
-									<Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+									<Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
 										<span className="absolute -inset-0.5" />
 										<span className="sr-only">
 											Open main menu
@@ -77,7 +77,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									className="flex flex-shrink-0 items-center cursor-pointer"
 								>
 									<h1 className="text-1xl -mt-3 text-white">
-										{"<🤍/>"}
+										{"<"}
+									</h1>
+									<HomeIcon className="h-5 mb-2.5 text-white"/>
+									<h1 className="text-1xl -mt-3 text-white">
+										{"/>"}
 									</h1>
 									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
 										Shelter
@@ -90,8 +94,8 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 											href={item.href}
 											className={cn(
 												item.current
-													? "bg-gray-900 text-white"
-													: "text-white hover:bg-gray-900 hover:text-white",
+													? "bg-background-800 text-white shadow-inset"
+													: "text-white hover:bg-background-800 hover:text-white hover:shadow-inset",
 												"rounded-md px-3 py-2 text-sm font-medium"
 											)}
 											aria-current={
@@ -107,11 +111,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 							</div>
 							<div className="flex items-center">
 								{!session && (
-									<div className="flex-shrink-0 pr-5">
+									<div className="flex-shrink-0 pr-5 max-sm:hidden">
 										<Link
 											type="button"
-											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-background-600 shadow-sm hover:bg-gray-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-											href="/hosts/apply"
+											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-background-600 shadow hover:bg-background-900 hover:shadow-inset hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500"
+											href="/hosts"
 										>
 											<PlusIcon
 												className="-ml-0.5 h-5 w-5"
@@ -198,8 +202,8 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									href={item.href}
 									className={cn(
 										item.current
-											? "bg-gray-900 text-white"
-											: "text-gray-300 hover:bg-gray-700 hover:text-white",
+											? "bg-background-900 text-white"
+											: "text-background-900 hover:bg-gray-700 hover:text-white",
 										"block rounded-md px-3 py-2 text-base font-medium"
 									)}
 									aria-current={
@@ -227,19 +231,6 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 										{user.email}
 									</div> */}
 								</div>
-								<button
-									type="button"
-									className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-								>
-									<span className="absolute -inset-1.5" />
-									<span className="sr-only">
-										View notifications
-									</span>
-									<BellIcon
-										className="h-6 w-6"
-										aria-hidden="true"
-									/>
-								</button>
 							</div>
 							<div className="mt-3 space-y-1 px-2 sm:px-3">
 								{/* {userNavigation.map((item) => (
@@ -255,7 +246,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 							</div>
 						</div>
 					</Disclosure.Panel>
-				</div>
+				</>
 			)}
 		</Disclosure>
 	);

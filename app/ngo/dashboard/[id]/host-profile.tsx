@@ -1,11 +1,15 @@
+"use client"
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 
-export default function HostProfile() {
-	const [open, setOpen] = useState(true);
+type TProps = {
+	open: boolean;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+ const HostProfile = ({open, setOpen}: TProps) => {
 
 	return (
 		<Transition.Root show={open} as={Fragment}>
@@ -237,3 +241,6 @@ export default function HostProfile() {
 		</Transition.Root>
 	);
 }
+
+
+export default HostProfile;

@@ -3,15 +3,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import HeaderServer from "@/components/header/header-server";
 import { cn } from "@/utils/cn";
-import { Footer } from "@/components/footer";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-	title: "Shelter - Host Refugees",
+	title: "Shelter - Host Displaced People",
 	description: "Host refugees and displaced people.",
 };
 
@@ -21,11 +19,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="h-full bg-background-900">
-			<body className={cn("flex flex-col h-full", inter.className)}>
+		<html lang="en" className="h-full bg-slate-200">
+			<body className={cn("flex flex-col min-h-full ", inter.className)}>
 				<HeaderServer />
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);
