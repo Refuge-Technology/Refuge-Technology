@@ -1,7 +1,7 @@
 "use client";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
@@ -35,6 +35,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 			href: "/resources",
 			current: false,
 		},
+		{
+			name: "Host Now",
+			href: "/hosts",
+			current: false
+		}
 	];
 
 	return (
@@ -72,7 +77,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									className="flex flex-shrink-0 items-center cursor-pointer"
 								>
 									<h1 className="text-1xl -mt-3 text-white">
-										{"<🤍/>"}
+										{"<"}
+									</h1>
+									<HomeIcon className="h-5 mb-2.5 text-white"/>
+									<h1 className="text-1xl -mt-3 text-white">
+										{"/>"}
 									</h1>
 									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
 										Shelter
@@ -102,7 +111,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 							</div>
 							<div className="flex items-center">
 								{!session && (
-									<div className="flex-shrink-0 pr-5">
+									<div className="flex-shrink-0 pr-5 max-sm:hidden">
 										<Link
 											type="button"
 											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-background-600 shadow hover:bg-background-900 hover:shadow-inset hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500"

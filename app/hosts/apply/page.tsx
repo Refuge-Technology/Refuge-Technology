@@ -2,13 +2,24 @@ import React from "react";
 import Sector1 from "./sector1";
 import Formcard from "./formcard";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
+import {getName, getNames} from 'country-list';
+
+
+const getCountries = () => {
+	const countries = getNames();
+	const options = countries.map(country =>{
+		return <option key={country} value={country}>{country}</option>
+	});
+
+	return options;
+};
 
 const HostApplicationForm = () => {
 	return (
 		<div className="flex justify-center w-full">
 			<div className="pt-10 space-y-10 md:divide-y divide-links sm:p-8 sm:w-4/5">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-					<h2 className="text-4xl text-white sm:text-6xl bg-background-500">
+					<h2 className="text-4xl text-white sm:text-6xl bg-red-700 italic">
 						Apply to Host
 					</h2>
 					<p className="mt-6 text-md leading-8 text-justify max-w-prose text-secondary border-none w-50">
@@ -51,7 +62,7 @@ const HostApplicationForm = () => {
 									name="first-name"
 									id="first-name"
 									autoComplete="given-name"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -69,7 +80,7 @@ const HostApplicationForm = () => {
 									name="last-name"
 									id="last-name"
 									autoComplete="family-name"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -87,7 +98,7 @@ const HostApplicationForm = () => {
 									name="email"
 									type="email"
 									autoComplete="email"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -106,14 +117,7 @@ const HostApplicationForm = () => {
 									autoComplete="country-name"
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
 								>
-									<option>Afghanistan</option>
-									<option>Egypt</option>
-									<option>Israel</option>
-									<option>Libya</option>
-									<option>Morocco</option>
-									<option>Palestine</option>
-									<option>Somalia</option>
-									<option>Sudan</option>
+								{getCountries()}
 								</select>
 							</div>
 						</div>
@@ -131,7 +135,7 @@ const HostApplicationForm = () => {
 									name="street-address"
 									id="street-address"
 									autoComplete="street-address"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -149,7 +153,7 @@ const HostApplicationForm = () => {
 									name="city"
 									id="city"
 									autoComplete="address-level2"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block p-5 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -167,7 +171,7 @@ const HostApplicationForm = () => {
 									name="region"
 									id="region"
 									autoComplete="address-level1"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -185,7 +189,7 @@ const HostApplicationForm = () => {
 									name="postal-code"
 									id="postal-code"
 									autoComplete="postal-code"
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -201,12 +205,10 @@ const HostApplicationForm = () => {
 									className="h-12 w-12 text-gray-300"
 									aria-hidden="true"
 								/>
-								<button
-									type="button"
-									className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-								>
-									Change
-								</button>
+								<input
+									type="file"
+									className="rounded-md bg-white px-2.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+								/>
 							</div>
 						</div>
 						{/* </div>
@@ -233,11 +235,11 @@ const HostApplicationForm = () => {
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
 					<div className="px-4 sm:px-0">
 						<h2 className="text-base font-semibold leading-7 text-secondary">
-							Notifications
+							Contact
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-links">
 							{
-								"We'll always let you know about important changes, but you pick what else you want to hear about."
+								"Please let us know your preferred contact method. Upon submission, your application will be viewed and you will be contacted by the Shelter team within 1-2 days."
 							}
 						</p>
 					</div>
@@ -248,78 +250,75 @@ const HostApplicationForm = () => {
 					<Formcard>
 						<fieldset className=" col-span-full">
 							<legend className="text-sm font-semibold leading-6 text-gray-900">
-								By Email
+								Preferred Method of Contact
 							</legend>
 							<div className="mt-6 space-y-6">
 								<div className="relative flex gap-x-3">
 									<div className="flex h-6 items-center">
 										<input
-											id="comments"
-											name="comments"
+											id="email"
+											name="email"
 											type="checkbox"
-											className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+											className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600"
 										/>
 									</div>
 									<div className="text-sm leading-6">
 										<label
-											htmlFor="comments"
+											htmlFor="phone"
 											className="font-medium text-gray-900"
 										>
-											Comments
+											Email
 										</label>
 										<p className="text-gray-500">
-											Get notified when someones posts a
-											comment on a posting.
+											Be contacted by the Shelter team and keep communication over Email.
 										</p>
 									</div>
 								</div>
 								<div className="relative flex gap-x-3">
 									<div className="flex h-6 items-center">
 										<input
-											id="candidates"
-											name="candidates"
+											id="phone"
+											name="phone"
 											type="checkbox"
-											className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+											className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600"
 										/>
 									</div>
 									<div className="text-sm leading-6">
 										<label
-											htmlFor="candidates"
+											htmlFor="phone"
 											className="font-medium text-gray-900"
 										>
-											Candidates
+											Phone Call
 										</label>
 										<p className="text-gray-500">
-											Get notified when a candidate
-											applies for a job.
+											Be contacted by the Shelter team and communicate over phone calls. Note: Phone contact may be limited by telecomm service in affected regions.
 										</p>
 									</div>
 								</div>
 								<div className="relative flex gap-x-3">
 									<div className="flex h-6 items-center">
 										<input
-											id="offers"
-											name="offers"
+											id="whatsapp"
+											name="whatsapp"
 											type="checkbox"
 											className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
 										/>
 									</div>
 									<div className="text-sm leading-6">
 										<label
-											htmlFor="offers"
+											htmlFor="whatsapp"
 											className="font-medium text-gray-900"
 										>
-											Offers
+											WhatsApp
 										</label>
 										<p className="text-gray-500">
-											Get notified when a candidate
-											accepts or rejects an offer.
+											Be contacted by the Shelter team and communicate over WhatsApp.
 										</p>
 									</div>
 								</div>
 							</div>
 						</fieldset>
-						<fieldset className=" col-span-full">
+						{/* <fieldset className=" col-span-full">
 							<legend className="text-sm font-semibold leading-6 text-gray-900">
 								Push Notifications
 							</legend>
@@ -371,7 +370,7 @@ const HostApplicationForm = () => {
 									</label>
 								</div>
 							</div>
-						</fieldset>
+						</fieldset> */}
 						{/* </div> */}
 						{/* </div> */}
 						{/* <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
@@ -397,3 +396,4 @@ const HostApplicationForm = () => {
 };
 
 export default HostApplicationForm;
+// console.log(getCountries())

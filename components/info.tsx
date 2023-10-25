@@ -1,3 +1,5 @@
+import { HomeIcon } from "@heroicons/react/24/outline";
+
 export default function Info() {
 	return (
 		<div className=" py-24 sm:py-32">
@@ -11,13 +13,9 @@ export default function Info() {
 								alt=""
 							/>
 							<figure className="relative isolate text-white">
-								<img
-									src="https://www.svgrepo.com/show/529027/home-1.svg"
-									alt=""
-									className="h-20 w-auto text-white"
-								/>
-								<blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
-									<p>Humanity first</p>
+								<HomeIcon className="h-20"/>
+								<blockquote className="mt-6 text-xl leading-8 text-white">
+									<p>Offer shelter. Offer humanity.</p>
 								</blockquote>
 							</figure>
 						</div>
@@ -28,14 +26,14 @@ export default function Info() {
 								What is Shelter?
 							</h1>
 							<div className="max-w-xl">
-								<p className="text-justify hyphens-auto mt-6 max-w-prose">
+								<p className="text-justify text-lg hyphens-auto mt-6 max-w-prose">
 								Shelter is an online application designed to connect hosts who have spare capacity in their homes with refugees who need a temporary place to stay. It has been directly inspired by TakeShelter, which was created 
 								and maintained by InternetActivism.
 								</p>
-								<p className= "text-justify hyphens-auto mt-6 max-w-prose">
+								<p className= "text-lg text-justify hyphens-auto mt-6 max-wprose">
 								This application is maintained by <a href="https://refugetechnology.org"> Refuge Technology</a>, a group of developers making open-source humanitarian software.
 								</p>
-								<p className="text-justify mt-8 max-w-prose">
+								<p className="text-lg text-justify mt-8 max-w-prose">
 									Once vetted, hosts can choose to host
 									refugees and displaced people in their
 									homes. Hosts can choose to host for a period
