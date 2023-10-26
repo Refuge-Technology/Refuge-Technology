@@ -1,18 +1,18 @@
-"use client"
-import React, {useState} from "react";
-import HostList from "./host-list";""
-import HostProfile from "./host-profile"
+import React from "react";
+import { cookies } from "next/headers";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { HostsClientComponent } from "./hosts";
 
-
-const Dashboard = () => {
-	const [open, setOpen] = useState(false);
-	
+const Dashboard = async () => {
+	const supabase = createServerComponentClient({ cookies });
+	let { data: hosts, error } = await supabase.from("hosts").select("*");
+	if (error) console.log("error", error);
 	return (
 		<div className="flex flex-col gap-8 sm:p-2 ">
 			<h1 className="text-2xl px-2 text-primary">Hosts</h1>
 			<span className="w-full border-b border-link" />
-			<HostList onClick={() => setOpen(!open)}/>
-			<HostProfile open={open} setOpen={setOpen} />
+			{/* <pre>{JSON.stringify(hosts, null, 2)}</pre> */}
+			{hosts ? <HostsClientComponent /> : <p>{error?.message}</p>}
 		</div>
 	);
 };
