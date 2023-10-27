@@ -2,14 +2,21 @@
 import React, { useState } from "react";
 import HostList from "./host-list";
 import HostProfile from "./host-profile";
+import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
-const HostsClientComponent = () => {
-	const [open, setOpen] = useState(false);
+type TProps = {
+	hosts: any[];
+};
+
+const HostsClientComponent = ({ hosts }: TProps) => {
+	const searchParams = useSearchParams();
+	const hostid = searchParams.get("host");
 
 	return (
 		<>
-			<HostList onClick={() => setOpen(!open)} />
-			<HostProfile open={open} setOpen={setOpen} />
+			<HostList hosts={hosts} />
+			<HostProfile hosts={hosts} hostid={hostid} />
 		</>
 	);
 };

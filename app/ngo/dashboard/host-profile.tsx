@@ -1,22 +1,41 @@
-"use client"
-import { Fragment, useState } from "react";
+"use client";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
+
+import { useRouter } from "next/navigation";
 import { cn } from "@/utils/cn";
 
 type TProps = {
-	open: boolean;
-	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	hosts: any[];
+	hostid: string | null;
 };
 
-export default function HostProfile({open, setOpen} :TProps) {
+type Host = {
+	full_name: string;
+	country_of_residence: string;
+	id: string;
+	biography: string;
+	email: string;
+	phone_number: string;
+};
+
+export default function HostProfile({ hostid, hosts }: TProps) {
+	const router = useRouter();
+	const [highlightedHost, setHighlightedHost] = useState<Host>({});
+	useEffect(() => {
+		setHighlightedHost(hosts.find((host) => host.id == hostid));
+	}, []);
 
 	return (
-		<Transition.Root show={open} as={Fragment}>
-			<Dialog as="div" className="relative z-10" onClose={setOpen}>
+		<Transition.Root show={hostid ? true : false} appear as={Fragment}>
+			<Dialog
+				as="div"
+				className="relative z-10"
+				onClose={() => router.push("/ngo/dashboard")}
+			>
 				<div className="fixed inset-0" />
-
 				<div className="fixed inset-0 overflow-hidden">
 					<div className="absolute inset-0 overflow-hidden">
 						<div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
@@ -44,7 +63,9 @@ export default function HostProfile({open, setOpen} :TProps) {
 														type="button"
 														className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500"
 														onClick={() =>
-															setOpen(false)
+															router.push(
+																"/ngo/dashboard"
+															)
 														}
 													>
 														<span className="absolute -inset-2.5" />
@@ -75,8 +96,9 @@ export default function HostProfile({open, setOpen} :TProps) {
 															<div>
 																<div className="flex items-center">
 																	<h3 className="text-xl font-bold text-gray-900 sm:text-2xl">
-																		John
-																		Doe
+																		{
+																			highlightedHost?.full_name
+																		}
 																	</h3>
 																	<span className="ml-2.5 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-green-400">
 																		<span className="sr-only">
@@ -85,7 +107,9 @@ export default function HostProfile({open, setOpen} :TProps) {
 																	</span>
 																</div>
 																<p className="text-sm text-gray-500">
-																	Gaza - Occupied Palestine
+																	{
+																		highlightedHost?.country_of_residence
+																	}
 																</p>
 															</div>
 															<div className="mt-5 flex flex-wrap space-y-3 sm:space-x-3 sm:space-y-0">
@@ -168,20 +192,9 @@ export default function HostProfile({open, setOpen} :TProps) {
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
 															<p>
-																Enim feugiat ut
-																ipsum, neque ut.
-																Tristique mi id
-																elementum
-																praesent.
-																Gravida in
-																tempus feugiat
-																netus enim
-																aliquet a, quam
-																scelerisque.
-																Dictumst in
-																convallis nec in
-																bibendum aenean
-																arcu.
+																{
+																	highlightedHost?.biography
+																}
 															</p>
 														</dd>
 													</div>
@@ -190,7 +203,9 @@ export default function HostProfile({open, setOpen} :TProps) {
 															Location
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
-															Gaza City - Occupied Palestine
+															{
+																highlightedHost?.country_of_residence
+															}
 														</dd>
 													</div>
 													<div>
@@ -198,7 +213,19 @@ export default function HostProfile({open, setOpen} :TProps) {
 															Email
 														</dt>
 														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
-															johndoe@example.com
+															{
+																highlightedHost?.email
+															}
+														</dd>
+													</div>
+													<div>
+														<dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">
+															Phone
+														</dt>
+														<dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
+															{
+																highlightedHost?.phone_number
+															}
 														</dd>
 													</div>
 												</dl>
