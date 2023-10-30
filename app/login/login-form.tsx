@@ -17,15 +17,38 @@
 import { ErrorToast } from "@/components/error-toast";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import {useForm, type FieldValues} from "react-hook-form";
+import {z} from "zod";
+import {zodResolver} from "@hookform/resolvers/zod";
+
+const signInSchema = z.object({
+	email: z.string().email(),
+	password: z.string().min(3, "Password must be at least 3 characters long"),
+});
+
+type TSignInSchema = z.infer<typeof signInSchema>;
 
 const LoginForm = () => {
 	const searchParams = useSearchParams();
 	const [errorMessage, setErrorMessage] = useState("");
+	const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm<FieldValues>({resolver: zodResolver(signInSchema)});
 
 	useEffect(() => {
 		const error = searchParams.get("error") || "";
 		setErrorMessage(error);
 	}, []);
+
+	const onSubmit = async (data : TSignInSchema) => {
+		await fetch("/auth/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
+			console.log(data)
+		// console.log("hi");
+	}
 
 	return (
 		<div className="flex flex-col gap-2">
@@ -36,7 +59,7 @@ const LoginForm = () => {
 				/>
 			)}
 			<div className="bg-white px-6 py-12 shadow-md ring-1 ring-gray-900/5 sm:rounded-lg sm:px-12">
-				<form className="space-y-6" action="/auth/login" method="POST">
+				<form className="space-y-6"  onSubmit={handleSubmit(onSubmit)}>
 					<div>
 						<label
 							htmlFor="email"
@@ -46,6 +69,7 @@ const LoginForm = () => {
 						</label>
 						<div className="mt-2">
 							<input
+								{...register("email")}
 								id="email"
 								name="email"
 								type="email"
@@ -67,6 +91,7 @@ const LoginForm = () => {
 						</div>
 						<div className="mt-2">
 							<input
+								{...register("password")}
 								id="password"
 								name="password"
 								type="password"
@@ -87,10 +112,11 @@ const LoginForm = () => {
 
 					<div className="pt-3">
 						<button
+							disabled={isSubmitting}
 							type="submit"
 							className="flex w-full justify-center rounded-sm bg-background-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow hover:bg-background-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600"
 						>
-							Sign in
+							{isSubmitting? "Signing In" : "Sign In"}
 						</button>
 					</div>
 				</form>

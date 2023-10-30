@@ -1,7 +1,7 @@
 import React from "react";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { HostsClientComponent } from "./hosts";
+import HostList from "./host-list";
 import HostProfile from "./host-profile";
 
 const Dashboard = async () => {
@@ -10,11 +10,11 @@ const Dashboard = async () => {
 	if (error) console.log("error", error);
 	return (
 		<div className="flex flex-col gap-8 sm:p-2 ">
-			{/* <h1 className="text-2xl px-2 text-primary">Hosts</h1>
-			<span className="w-full border-b border-link" /> */}
-			{/* <pre>{JSON.stringify(hosts, null, 2)}</pre> */}
 			{hosts ? (
-				<HostsClientComponent hosts={hosts} />
+			<>
+				<HostList hosts={hosts} />
+				<HostProfile hosts={hosts} />
+			</>
 			) : (
 				<p>{error?.message}</p>
 			)}

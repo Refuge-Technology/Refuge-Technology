@@ -3,7 +3,6 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { HostsClientComponent } from "./hosts";
 export default async function DashboardLayout({
 	children,
 }: {
@@ -17,10 +16,6 @@ export default async function DashboardLayout({
 	if (!session) {
 		redirect("/login");
 	}
-
-	// const supabase = createServerComponentClient({ cookies });
-	let { data: hosts, error } = await supabase.from("hosts").select("*");
-	if (error) console.log("error", error);
 
 	return (
 		<div className="flex bg-slate-100 grow">

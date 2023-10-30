@@ -4,12 +4,13 @@ import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
 
+import { useSearchParams } from "next/navigation";
+
 import { useRouter } from "next/navigation";
 import { cn } from "@/utils/cn";
 
 type TProps = {
 	hosts: any[];
-	hostid: string | null;
 };
 
 type Host = {
@@ -21,9 +22,12 @@ type Host = {
 	phone_number: string;
 };
 
-export default function HostProfile({ hostid, hosts }: TProps) {
+export default function HostProfile({ hosts }: TProps) {
 	const router = useRouter();
-	const [highlightedHost, setHighlightedHost] = useState<Host>({});
+	
+	const searchParams = useSearchParams();
+	const hostid = searchParams.get("host");
+	const [highlightedHost, setHighlightedHost] = useState<Host>({} as Host);
 	useEffect(() => {
 		setHighlightedHost(hosts.find((host) => host.id == hostid));
 	}, []);
