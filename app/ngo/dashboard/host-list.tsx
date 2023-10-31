@@ -78,8 +78,8 @@ export default function HostList({ hosts }: TProps) {
 				>
 					<div className="flex min-w-0 gap-x-4">
 						<img
-							className="h-12 w-12 flex-none rounded-full bg-gray-50"
-							src={people[index].imageUrl}
+							className="h-12 w-12 flex-none object-cover rounded-full bg-gray-50"
+							src={host.profile_picture}
 							alt=""
 						/>
 						<div className="min-w-0 flex-auto">

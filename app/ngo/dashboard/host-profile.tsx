@@ -20,11 +20,12 @@ type Host = {
 	biography: string;
 	email: string;
 	phone_number: string;
+	profile_picture: string;
 };
 
 export default function HostProfile({ hosts }: TProps) {
 	const router = useRouter();
-	
+
 	const searchParams = useSearchParams();
 	const hostid = searchParams.get("host");
 	const [highlightedHost, setHighlightedHost] = useState<Host>({} as Host);
@@ -91,7 +92,9 @@ export default function HostProfile({ hosts }: TProps) {
 													<div className="relative h-40 sm:h-56">
 														<img
 															className="absolute h-full w-full object-cover"
-															src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+															src={
+																highlightedHost?.profile_picture
+															}
 															alt=""
 														/>
 													</div>
