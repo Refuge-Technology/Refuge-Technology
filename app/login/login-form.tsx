@@ -1,65 +1,59 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 "use client";
 
 import { ErrorToast } from "@/components/error-toast";
-import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
-import {useForm, type FieldValues} from "react-hook-form";
-import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
-
-const signInSchema = z.object({
-	email: z.string().email(),
-	password: z.string().min(3, "Password must be at least 3 characters long"),
-});
-
-type TSignInSchema = z.infer<typeof signInSchema>;
+import { useForm } from "react-hook-form";
+import { signInSchema, TSignInSchema } from "@/lib/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
-	const searchParams = useSearchParams();
-	const [errorMessage, setErrorMessage] = useState("");
-	const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm<FieldValues>({resolver: zodResolver(signInSchema)});
+	const router = useRouter();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+		setError,
+		clearErrors,
+	} = useForm<TSignInSchema>({ resolver: zodResolver(signInSchema) });
 
-	useEffect(() => {
-		const error = searchParams.get("error") || "";
-		setErrorMessage(error);
-	}, []);
-
-	const onSubmit = async (data : TSignInSchema) => {
-		await fetch("/auth/login", {
+	const onSubmit = async (data: TSignInSchema) => {
+		const response = await fetch("/auth/login", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
+			},
+			body: JSON.stringify(data),
+		});
+
+		const responseData = await response.json();
+		if (responseData.status == 200) {
+			router.refresh();
+		}
+
+		if (!response.ok) {
+			alert("Login Failed");
+			return;
+		}
+		if (responseData.errors) {
+			const errors = responseData.errors;
+			setError("root.serverError", {
+				type: "server",
+				message: errors,
 			});
-			console.log(data)
-		// console.log("hi");
-	}
+		}
+	};
 
 	return (
 		<div className="flex flex-col gap-2">
-			{errorMessage && (
+			{errors?.root?.serverError?.type === "server" && (
 				<ErrorToast
-					error={errorMessage}
-					onClick={() => setErrorMessage("")}
+					error={errors.root.serverError.message}
+					onClick={() => clearErrors()}
 				/>
 			)}
+
 			<div className="bg-white px-6 py-12 shadow-md ring-1 ring-gray-900/5 sm:rounded-lg sm:px-12">
-				<form className="space-y-6"  onSubmit={handleSubmit(onSubmit)}>
+				<form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
 					<div>
 						<label
 							htmlFor="email"
@@ -116,7 +110,7 @@ const LoginForm = () => {
 							type="submit"
 							className="flex w-full justify-center rounded-sm bg-background-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow hover:bg-background-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600"
 						>
-							{isSubmitting? "Signing In" : "Sign In"}
+							{isSubmitting ? "Signing In" : "Sign In"}
 						</button>
 					</div>
 				</form>

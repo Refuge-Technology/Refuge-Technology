@@ -1,14 +1,24 @@
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
+import { signInSchema, TSignInSchema } from "@/lib/types";
 
 import type { Database } from "@/lib/database.types";
 
 export async function POST(request: Request) {
 	const requestUrl = new URL(request.url);
-	const formData = await request.json();
-	const email = String(formData.get("email"));
-	const password = String(formData.get("password"));
+	const formData: unknown = await request.json();
+	const result = signInSchema.safeParse(formData);
+	let zodErrors = {};
+	if (!result.success) {
+		result.error.issues.forEach((issue) => {
+			zodErrors = { ...zodErrors, [issue.path[0]]: issue.message };
+		});
+		return NextResponse.json({ errors: zodErrors }, { status: 400 });
+	}
+	const email = result.data.email;
+	const password = result.data.password;
+
 	const cookieStore = cookies();
 	const supabase = createRouteHandlerClient<Database>({
 		cookies: () => cookieStore,
@@ -19,21 +29,22 @@ export async function POST(request: Request) {
 			email,
 			password,
 		});
+
 		if (error) {
-			return NextResponse.redirect(
-				`${requestUrl.origin}/login?error=${error.message}`,
-				{
-					status: 301,
-				}
-			);
+			return NextResponse.json({
+				errors: error.message,
+				status: error.status,
+			});
 		}
-		return NextResponse.redirect(`${requestUrl.origin}/ngo/dashboard`, {
-			status: 301,
+		return NextResponse.json({
+			message: "Login successful",
+			status: 200,
+			redirect: requestUrl.origin,
 		});
-	} catch (error) {
-		return NextResponse.json(
-			{ message: "An unexpected error occurred" },
-			{ status: 500 }
-		);
+	} catch (errors) {
+		return NextResponse.json({
+			errors: "An unexpected error occurred",
+			status: 500,
+		});
 	}
 }
