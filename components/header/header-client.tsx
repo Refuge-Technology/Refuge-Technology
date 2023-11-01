@@ -1,7 +1,12 @@
 "use client";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+	Bars3Icon,
+	BellIcon,
+	HomeIcon,
+	XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
@@ -38,18 +43,15 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 		{
 			name: "Host Now",
 			href: "/hosts",
-			current: false
-		}
+			current: false,
+		},
 	];
 
 	return (
-		<Disclosure
-			as="nav"
-			className="z-10"
-		>
+		<Disclosure as="nav" className="z-10">
 			{({ open }) => (
 				<>
-					<div className="mx-auto px-4 sm:px-6 shadow-lglg:px-8 bg-background-600">
+					<div className="mx-auto px-4 sm:px-6 shadow-lglg:px-8 bg-background-500">
 						<div className="flex h-16 justify-between">
 							<div className="flex">
 								<div className="-ml-2 mr-2 flex items-center md:hidden">
@@ -79,7 +81,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									<h1 className="text-1xl -mt-3 text-white">
 										{"<"}
 									</h1>
-									<HomeIcon className="h-5 mb-2.5 text-white"/>
+									<HomeIcon className="h-5 mb-2.5 text-white" />
 									<h1 className="text-1xl -mt-3 text-white">
 										{"/>"}
 									</h1>

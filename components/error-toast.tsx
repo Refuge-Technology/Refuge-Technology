@@ -1,7 +1,7 @@
 import { XCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
 type TProps = {
-	error: string;
+	error: any;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 

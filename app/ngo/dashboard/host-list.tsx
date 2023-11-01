@@ -62,54 +62,48 @@ const people = [
 ];
 
 type TProps = {
-	onClick: () => void;
+	hosts: any[];
 };
 
-export default function HostList({onClick}: TProps) {
+export default function HostList({ hosts }: TProps) {
 	return (
 		<ul
 			role="list"
 			className="divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl"
 		>
-			{people.map((person) => (
+			{hosts.map((host, index) => (
 				<li
-					key={person.email}
+					key={host.email}
 					className="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6"
-					onClick={onClick}
 				>
 					<div className="flex min-w-0 gap-x-4">
 						<img
-							className="h-12 w-12 flex-none rounded-full bg-gray-50"
-							src={person.imageUrl}
+							className="h-12 w-12 flex-none object-cover rounded-full bg-gray-50"
+							src={host.profile_picture}
 							alt=""
 						/>
 						<div className="min-w-0 flex-auto">
 							<p className="text-sm font-semibold leading-6 text-gray-900">
-								<a href={person.href}>
+								<a href={`/ngo/dashboard/?host=${host.id}`}>
 									<span className="absolute inset-x-0 -top-px bottom-0" />
-									{person.name}
+									{host.full_name}
 								</a>
 							</p>
-							<p className="mt-1 flex text-xs leading-5 text-gray-500">
-								<a
-									href={`mailto:${person.email}`}
-									className="relative truncate hover:underline"
-								>
-									{person.email}
-								</a>
+							<p className="relative truncate mt-1 flex text-xs leading-5 text-gray-500">
+								{host.email}
 							</p>
 						</div>
 					</div>
 					<div className="flex shrink-0 items-center gap-x-4">
 						<div className="hidden sm:flex sm:flex-col sm:items-end">
 							<p className="text-sm leading-6 text-gray-900">
-								{person.location}
+								{host.country_of_residence}
 							</p>
-							{person.lastSeen ? (
+							{/* {host.lastSeen ? (
 								<p className="mt-1 text-xs leading-5 text-gray-500">
 									Last seen{" "}
-									<time dateTime={person.lastSeenDateTime}>
-										{person.lastSeen}
+									<time dateTime={host.lastSeenDateTime}>
+										{host.lastSeen}
 									</time>
 								</p>
 							) : (
@@ -121,7 +115,7 @@ export default function HostList({onClick}: TProps) {
 										Online
 									</p>
 								</div>
-							)}
+							)} */}
 						</div>
 						<ChevronRightIcon
 							className="h-5 w-5 flex-none text-gray-400"
