@@ -4,7 +4,7 @@ import { PlusCircleIcon } from '@heroicons/react/24/outline';
 
 const OurResponse = () => {
   return (
-    <div className="bg-background px-6 pb-20 lg:px-8">
+    <div id="response" className="bg-background px-6 pb-20 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700 pb-5">
         <Title className="text-3xl tracking-tight text-white sm:text-4xl"> Our Response to Critical Mass Displacement Events </Title>
 		<h1 className="mt-2 text-3xl tracking-tight text-secondary sm:text-4xl pt-5">
