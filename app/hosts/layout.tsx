@@ -6,7 +6,7 @@ export default function DashboardLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="">
+		<div className="grow flex flex-col justify-between">
 			{children}
 			<Footer />
 		</div>
