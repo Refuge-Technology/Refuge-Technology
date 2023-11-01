@@ -6,7 +6,7 @@ import { OurResponse } from "@/components/ourresponse";
 
 const links = [
 	{ name: "Refugee Resources", href: "/resources" },
-	{ name: "Donate to Aid Orgs", href: "/donate" },
+	{ name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Host Now", href: "/hosts/apply" },
 ];
 
