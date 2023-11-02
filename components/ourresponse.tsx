@@ -27,7 +27,7 @@ const OurResponse = () => {
               <PlusCircleIcon className="mt-1 h-5 w-5 flex-none text-red-600" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Hosting Displaced People:</strong> Consider hosting displaced people 
-				if you are able to and reside in Israel, Egypt, the Gaza Strip, or the West Bank.
+				if you are able to and reside in Israel, Egypt, the Gaza Strip, the West Bank, or in the general MENA (Middle East North Africa) area.
               </span>
             </li>
             <li className="flex gap-x-3">
