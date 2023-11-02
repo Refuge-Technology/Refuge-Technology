@@ -12,7 +12,7 @@ const OurResponse = () => {
 		</h1>
 			<p className="mt-6 text-lg leading-8 max-w-prose">
 			In the aftermath of the October 7th attacks perpetuated by the Hamas group, an all out conflict has broken out in the already tense region comprising of Palestine and Israel.
-			Hundreds of thousands of innocent civilians in both Israel & the Gaza Strip, many of them children, have lost their homes and way of life as a result.
+			Innocent civilians in both Israel & the Gaza Strip, many of them children, have lost their homes and way of life as a result.
 			</p>
         <div className="mt-6 text-lg leading-8 max-w-prose">
           <p>
@@ -35,7 +35,7 @@ const OurResponse = () => {
               <span>
                 <strong className="font-semibold text-gray-900">Donating to Aid Orgs:</strong> Consider donating to aid organizations such as 
 				<a href="https://www.israaid.org/" className='text-links'> IsraAid </a> to support Israeli relief efforts and the <a href="https://www.unrwa.org/" className='text-links'> UNRWA </a>
-				for relief in Occupied Palestine. 
+				for relief in the Gaza Strip and the Occupied West Bank. 
               </span>
             </li>
           </ul>
