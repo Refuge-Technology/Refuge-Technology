@@ -96,7 +96,7 @@ const LoginForm = () => {
 						</div>
 						<div className="text-sm">
 							<a
-								href="#"
+								href="mailto:refuge_technology@proton.me?subject=Forgot Password"
 								className="text-background-700 float-right hover:text-background-800"
 							>
 								Forgot password?

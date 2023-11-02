@@ -81,7 +81,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									<h1 className="text-1xl -mt-3 text-white">
 										{"<"}
 									</h1>
-									<HomeIcon className="h-5 mb-2.5 text-white" />
+									<HomeIcon className="h-5 mb-2.5 fill-white text-white" />
 									<h1 className="text-1xl -mt-3 text-white">
 										{"/>"}
 									</h1>
