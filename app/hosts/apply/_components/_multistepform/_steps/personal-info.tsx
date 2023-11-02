@@ -16,6 +16,7 @@ const PersonalInfo = () => {
 					<input
 						type="text"
 						name="first-name"
+						required={true}
 						id="first-name"
 						autoComplete="given-name"
 						className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
@@ -150,24 +151,6 @@ const PersonalInfo = () => {
 						id="postal-code"
 						autoComplete="postal-code"
 						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
-					/>
-				</div>
-			</div>
-			<div className="col-span-full">
-				<label
-					htmlFor="photo"
-					className="block text-sm font-medium leading-6 text-gray-900"
-				>
-					Photo
-				</label>
-				<div className="mt-2 flex">
-					<UserCircleIcon
-						className="h-12 w-12 text-gray-300"
-						aria-hidden="true"
-					/>
-					<input
-						type="file"
-						className="rounded-md bg-white px-2.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 max-sm:border-2 max-sm:border-gray"
 					/>
 				</div>
 			</div>

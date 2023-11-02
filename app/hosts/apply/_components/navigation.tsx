@@ -4,34 +4,22 @@ import { CheckIcon } from "@heroicons/react/24/solid";
 const steps = [
 	{
 		id: "01",
-		name: "Job Details",
-		description: "Vitae sed mi luctus laoreet.",
+		name: "Personal Information",
+		description: "Used for verification and displayed to humanitarian orgs.",
 		href: "#",
 	},
 	{
 		id: "02",
-		name: "Application form",
-		description: "Cursus semper viverra.",
+		name: "Room/Home Information",
+		description: "Provide a description of the shelter you are offering.",
 		href: "#",
 	},
 	{
 		id: "03",
-		name: "Preview",
-		description: "Penatibus eu quis ante.",
+		name: "Contact & Submit",
+		description: "Indicate your method of contact and submit your application for review.",
 		href: "#",
-	},
-	{
-		id: "04",
-		name: "Review",
-		description: "Faucibus nec enim leo.",
-		href: "#",
-	},
-	{
-		id: "05",
-		name: "Payment",
-		description: "Quisque sapien nunc nisl.",
-		href: "#",
-	},
+	}
 ];
 
 const Navigation = ({ step }: { step: number }) => {
