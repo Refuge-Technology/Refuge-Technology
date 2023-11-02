@@ -12,7 +12,7 @@ const OurResponse = () => {
 		</h1>
 			<p className="mt-6 text-lg leading-8 max-w-prose">
 			In the aftermath of the October 7th attacks perpetuated by the Hamas group, an all out conflict has broken out in the already tense region comprising of Palestine and Israel.
-			Hundreds of thousands of innocent civilians in both Israel & the Gaza Strip, many of them children, have lost their homes and way of life as a result.
+			Innocent civilians in both Israel & the Gaza Strip, many of them children, have lost their homes and way of life as a result.
 			</p>
         <div className="mt-6 text-lg leading-8 max-w-prose">
           <p>
@@ -27,7 +27,7 @@ const OurResponse = () => {
               <PlusCircleIcon className="mt-1 h-5 w-5 flex-none text-red-600" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Hosting Displaced People:</strong> Consider hosting displaced people 
-				if you are able to and reside in Israel, Egypt, the Gaza Strip, or the West Bank.
+				if you are able to and reside in Israel, Egypt, the Gaza Strip, the West Bank, or in the general MENA (Middle East North Africa) area.
               </span>
             </li>
             <li className="flex gap-x-3">
@@ -35,7 +35,7 @@ const OurResponse = () => {
               <span>
                 <strong className="font-semibold text-gray-900">Donating to Aid Orgs:</strong> Consider donating to aid organizations such as 
 				<a href="https://www.israaid.org/" className='text-links'> IsraAid </a> to support Israeli relief efforts and the <a href="https://www.unrwa.org/" className='text-links'> UNRWA </a>
-				for relief in Occupied Palestine. 
+				for relief in the Gaza Strip and the Occupied West Bank. 
               </span>
             </li>
           </ul>
