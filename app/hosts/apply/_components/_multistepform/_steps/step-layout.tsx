@@ -1,4 +1,7 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { personalInfoSchema, TPersonalInfoSchema } from "@/lib/types";
 
 type TProps = {
 	title: string;
@@ -7,6 +10,16 @@ type TProps = {
 };
 
 const Step = ({ title, description, children }: TProps) => {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+		setError,
+		clearErrors,
+	} = useForm<TPersonalInfoSchema>({
+		resolver: zodResolver(personalInfoSchema),
+	});
+
 	return (
 		<div className="grid grid-cols-1 gap-x-8 gap-y-8 p-0 sm:px-10 md:grid-cols-3 grow lg:pt-8">
 			<div className="px-4 sm:px-0 h-fit ">

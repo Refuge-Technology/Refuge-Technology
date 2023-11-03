@@ -58,7 +58,7 @@ const ContactInfo = () => {
 							id="whatsapp"
 							name="whatsapp"
 							type="checkbox"
-							className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+							className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-indigo-600"
 						/>
 					</div>
 					<div className="text-sm leading-6">

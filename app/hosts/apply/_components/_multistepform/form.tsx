@@ -51,7 +51,7 @@ const Form = ({step}: {step : number}) => {
 				return <PersonalInfo />;
 		}
 	};
-	return <Step {...propsBasedOnStep(step)}>{childrenBasedOnStep(step)}</Step>;
+	return <Step {...propsBasedOnStep(step)} >{childrenBasedOnStep(step)}</Step>;
 };
 
 export default Form;
