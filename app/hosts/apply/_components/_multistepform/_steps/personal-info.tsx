@@ -1,5 +1,4 @@
 import React from "react";
-import { UserCircleIcon } from "@heroicons/react/20/solid";
 import countries from "@/assets/json-objects/countries.json";
 
 const PersonalInfo = () => {
