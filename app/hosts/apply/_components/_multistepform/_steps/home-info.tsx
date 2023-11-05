@@ -11,7 +11,7 @@ const HomeInfo = () => {
 				>
 					About
 				</label>
-				<div className="mt-2">
+				<div className="sm: mt-2">
 					<textarea
 						id="about"
 						name="about"

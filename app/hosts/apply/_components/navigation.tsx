@@ -5,7 +5,7 @@ const steps = [
 	{
 		id: "01",
 		name: "Personal Information",
-		description: "Used for verification and displayed to humanitarian orgs.",
+		description: "Used for verification and displayed to humanitarian orgs.f",
 		href: "#",
 	},
 	{
