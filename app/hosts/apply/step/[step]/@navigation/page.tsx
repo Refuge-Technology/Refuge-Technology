@@ -7,7 +7,7 @@ const steps = [
 		id: "01",
 		name: "Personal Information",
 		description:
-			"Used for verification and displayed to humanitarian orgs.f",
+			"Used for verification and displayed to humanitarian orgs.",
 		href: "/hosts/apply/step/0",
 	},
 	{
@@ -55,7 +55,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 									)}
 								>
 									{stepIdx < step ? (
-										<a
+										<Link
 											href={stepIndicator.href}
 											className="group"
 										>
@@ -90,7 +90,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 													</span>
 												</span>
 											</span>
-										</a>
+										</Link>
 									) : stepIdx == step ? (
 										<Link
 											href={stepIndicator.href}
@@ -206,16 +206,16 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 					{steps.map((stepIndicator, stepIndex) => (
 						<li key={stepIndicator.name}>
 							{stepIndex < step ? (
-								<a
+								<Link
 									href={stepIndicator.href}
 									className="block h-2.5 w-2.5 rounded-full bg-background-500 hover:bg-background-800"
 								>
 									<span className="sr-only">
 										{stepIndicator.name}
 									</span>
-								</a>
+								</Link>
 							) : stepIndex == step ? (
-								<a
+								<Link
 									href={stepIndicator.href}
 									className="relative flex items-center justify-center"
 									aria-current="step"
@@ -233,16 +233,16 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 									<span className="sr-only">
 										{stepIndicator.name}
 									</span>
-								</a>
+								</Link>
 							) : (
-								<a
+								<Link
 									href={stepIndicator.href}
 									className="block h-2.5 w-2.5 rounded-full bg-gray-200 hover:bg-gray-400"
 								>
 									<span className="sr-only">
 										{stepIndicator.name}
 									</span>
-								</a>
+								</Link>
 							)}
 						</li>
 					))}

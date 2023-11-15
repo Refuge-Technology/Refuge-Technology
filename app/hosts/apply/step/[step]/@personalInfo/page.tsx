@@ -1,9 +1,40 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import countries from "@/assets/json-objects/countries.json";
 
+import { useForm } from "react-hook-form";
+import { personalInfoSchema, TPersonalInfoSchema } from "@/lib/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useFormStore } from "@/store";
+
 const PersonalInfo = () => {
+
+	
+	const updateForm = useFormStore((state: any) => state.updateForm);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+		setError,
+		clearErrors,
+	} = useForm<TPersonalInfoSchema>({
+		resolver: zodResolver(personalInfoSchema),
+	});
+
+	//TODO : FIX TYPING ON STORE AND ONSUBMIT
+
+	const onSubmit = (data: any) => {
+		updateForm(data)
+
+	};
+
+	//TODO: ADD ERROR HANDLING
+
 	return (
-		<>
+		<form
+			className="grid  max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
+			onSubmit={handleSubmit(onSubmit)}
+		>
 			<div className="sm:col-span-3">
 				<label
 					htmlFor="first-name"
@@ -13,10 +44,11 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("first_name")}
 						type="text"
-						name="first-name"
+						name="first_name"
 						required={true}
-						id="first-name"
+						id="first_name"
 						autoComplete="given-name"
 						className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
@@ -32,9 +64,10 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("last_name")}
 						type="text"
-						name="last-name"
-						id="last-name"
+						name="last_name"
+						id="last_name"
 						autoComplete="family-name"
 						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
@@ -50,6 +83,7 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("email")}
 						id="email"
 						name="email"
 						type="email"
@@ -68,6 +102,7 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<select
+						{...register("country")}
 						id="country"
 						name="country"
 						autoComplete="country-name"
@@ -91,9 +126,10 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("street_address")}
 						type="text"
-						name="street-address"
-						id="street-address"
+						name="street_address"
+						id="street_address"
 						autoComplete="street-address"
 						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
@@ -109,6 +145,7 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("city")}
 						type="text"
 						name="city"
 						id="city"
@@ -127,9 +164,10 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("state")}
 						type="text"
-						name="region"
-						id="region"
+						name="state"
+						id="state"
 						autoComplete="address-level1"
 						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 					/>
@@ -145,15 +183,18 @@ const PersonalInfo = () => {
 				</label>
 				<div className="mt-2">
 					<input
+						{...register("zip")}
 						type="text"
-						name="postal-code"
-						id="postal-code"
+						name="zip"
+						id="zip"
 						autoComplete="postal-code"
 						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 					/>
 				</div>
 			</div>
-		</>
+						{/* TODO: FIX SUBMIT BUTTON TO BUTTON COMPONENT */}
+			<button type="submit">test</button>
+		</form>
 	);
 };
 

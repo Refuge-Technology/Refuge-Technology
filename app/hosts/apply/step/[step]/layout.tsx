@@ -1,4 +1,5 @@
 import React from "react";
+import { HostForm } from "./hostForm";
 
 type TProps = {
 	children: React.ReactNode;
@@ -21,21 +22,8 @@ const Step = ({
 	homeInfo,
 	contactInfo,
 	navigation,
-	formButton
+	formButton,
 }: TProps) => {
-	const renderPageBasedOnStep = (step: number): React.ReactNode => {
-		switch (step) {
-			case 0:
-				return personalInfo;
-			case 1:
-				return homeInfo;
-			case 2:
-				return contactInfo;
-			default:
-				return <div className=" col-span-2">404 page not found</div>;
-		}
-	};
-
 	const renderDescriptionBasedOnStep = (step: number): DescriptionProps => {
 		switch (step) {
 			case 0:
@@ -83,13 +71,19 @@ const Step = ({
 						}
 					</p>
 				</div>
-				<form className="bg-white justify-self-center h-fit w-full max-w-3xl shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+				{/* <form className="bg-white justify-self-center h-fit w-full max-w-3xl shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 					<div className="px-4 py-6 sm:p-8">
 						<div className="grid  max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 							{renderPageBasedOnStep(Number(params.step))}
 						</div>
 					</div>
-				</form>
+				</form> */}
+				<HostForm
+					personalInfo={personalInfo}
+					homeInfo={homeInfo}
+					contactInfo={contactInfo}
+					params={params}
+				/>
 			</div>
 			{formButton}
 		</>
