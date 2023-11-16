@@ -6,10 +6,11 @@ import { useForm } from "react-hook-form";
 import { personalInfoSchema, TPersonalInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormStore } from "@/store";
+import { useRouter } from "next/navigation";
+import FormInput from "./formInput";
 
 const PersonalInfo = () => {
-
-	
+	const router = useRouter();
 	const updateForm = useFormStore((state: any) => state.updateForm);
 	const {
 		register,
@@ -21,11 +22,9 @@ const PersonalInfo = () => {
 		resolver: zodResolver(personalInfoSchema),
 	});
 
-	//TODO : FIX TYPING ON STORE AND ONSUBMIT
-
-	const onSubmit = (data: any) => {
-		updateForm(data)
-
+	const onSubmit = (data: TPersonalInfoSchema) => {
+		updateForm(data);
+		router.push("/hosts/apply/step/1");
 	};
 
 	//TODO: ADD ERROR HANDLING
@@ -33,6 +32,7 @@ const PersonalInfo = () => {
 	return (
 		<form
 			className="grid  max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
+			id="personalInfo"
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<div className="sm:col-span-3">
@@ -43,14 +43,14 @@ const PersonalInfo = () => {
 					First name
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("first_name")}
+					<FormInput
+						register={{ ...register("first_name") }}
+						errors={errors}
 						type="text"
 						name="first_name"
-						required={true}
+						required
 						id="first_name"
 						autoComplete="given-name"
-						className="block w-full rounded-md border-0 p-5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
 				</div>
 			</div>
@@ -63,13 +63,14 @@ const PersonalInfo = () => {
 					Last name
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("last_name")}
+					<FormInput
+						register={{ ...register("last_name") }}
+						errors={errors}
 						type="text"
 						name="last_name"
+						required
 						id="last_name"
 						autoComplete="family-name"
-						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
 				</div>
 			</div>
@@ -82,13 +83,14 @@ const PersonalInfo = () => {
 					Email address
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("email")}
+					<FormInput
+						register={{ ...register("email") }}
+						errors={errors}
+						required
 						id="email"
-						name="email"
 						type="email"
+						name="email"
 						autoComplete="email"
-						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 					/>
 				</div>
 			</div>
@@ -103,6 +105,7 @@ const PersonalInfo = () => {
 				<div className="mt-2">
 					<select
 						{...register("country")}
+						required
 						id="country"
 						name="country"
 						autoComplete="country-name"
@@ -125,13 +128,14 @@ const PersonalInfo = () => {
 					Street address
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("street_address")}
+					<FormInput
+						register={{ ...register("street_address") }}
+						errors={errors}
 						type="text"
 						name="street_address"
+						required
 						id="street_address"
 						autoComplete="street-address"
-						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
 				</div>
 			</div>
@@ -144,13 +148,14 @@ const PersonalInfo = () => {
 					City
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("city")}
+					<FormInput
+						register={{ ...register("city") }}
+						errors={errors}
 						type="text"
 						name="city"
+						required
 						id="city"
 						autoComplete="address-level2"
-						className="block p-5 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 max-sm:border-2 max-sm:border-gray sm:text-sm sm:leading-6"
 					/>
 				</div>
 			</div>
@@ -163,13 +168,14 @@ const PersonalInfo = () => {
 					State / Province
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("state")}
+					<FormInput
+						register={{ ...register("state") }}
+						errors={errors}
 						type="text"
 						name="state"
+						required
 						id="state"
 						autoComplete="address-level1"
-						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 					/>
 				</div>
 			</div>
@@ -182,18 +188,17 @@ const PersonalInfo = () => {
 					ZIP / Postal code
 				</label>
 				<div className="mt-2">
-					<input
-						{...register("zip")}
+					<FormInput
+						register={{ ...register("zip") }}
+						errors={errors}
 						type="text"
 						name="zip"
+						required
 						id="zip"
 						autoComplete="postal-code"
-						className="block w-full p-5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray"
 					/>
 				</div>
 			</div>
-						{/* TODO: FIX SUBMIT BUTTON TO BUTTON COMPONENT */}
-			<button type="submit">test</button>
 		</form>
 	);
 };

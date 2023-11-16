@@ -3,8 +3,10 @@ import { immer } from "zustand/middleware/immer";
 
 export const useFormStore = create<any>()(
 	immer((set) => ({
-		form: { name: "ali" },
+		form: {},
 		updateForm: (action: any) =>
-			set((store: any) => ({ form: { ...store.form, ...action } })),
+			set((store: any) => ({
+				form: { ...store.form, ...action },
+			})),
 	}))
 );
