@@ -234,7 +234,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 										className="absolute flex h-5 w-5 p-px"
 										aria-hidden="true"
 									>
-										<span className="h-full w-full rounded-full bg-background-100" />
+										<span className="h-full w-full rounded-full bg-background-200" />
 									</span>
 									<span
 										className="relative block h-2.5 w-2.5 rounded-full bg-background-500"
@@ -247,7 +247,10 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 							) : (
 								<Link
 									href={stepIndicator.href}
-									className="block h-2.5 w-2.5 rounded-full bg-gray-200 hover:bg-gray-400"
+									className={cn("block h-2.5 w-2.5 rounded-full bg-background-200 hover:bg-background-400",checkStepBasedOnForm(form) <
+									stepIndex
+									? "pointer-events-none"
+									: "" )}
 								>
 									<span className="sr-only">
 										{stepIndicator.name}
