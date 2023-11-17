@@ -12,7 +12,7 @@ const FormButton = ({ params }: { params: { step: string } }) => {
 	const step = Number(params.step);
 	const form = useFormStore((state: any) => state.form);
 	const updateForm = useFormStore((state: any) => state.updateForm);
-	
+
 	const {
 		register,
 		handleSubmit,
@@ -24,8 +24,7 @@ const FormButton = ({ params }: { params: { step: string } }) => {
 	});
 
 	return (
-	
-		<div className="w-2/3 flex justify-end gap-2">
+		<div className="flex justify-center items-end pb-2 grow gap-4 ">
 			{step > 0 && (
 				<button
 					className="rounded-md bg-background-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-background-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500 capitalize"
@@ -43,7 +42,7 @@ const FormButton = ({ params }: { params: { step: string } }) => {
 				// onClick={() => console.log(form)}
 			>
 				{/* {step === 2 ? "submit" : "next"} */}
-				{ isSubmitting ? JSON.stringify(form) : "next"}
+				{isSubmitting ? JSON.stringify(form) : "next"}
 			</button>
 		</div>
 	);

@@ -1,6 +1,9 @@
+"use client";
 import { cn } from "@/utils/cn";
 import { CheckIcon } from "@heroicons/react/24/solid";
+import { useFormStore } from "@/store";
 import Link from "next/link";
+import { checkStepBasedOnForm } from "./../../../../../../utils/formStepChecker";
 
 const steps = [
 	{
@@ -26,6 +29,7 @@ const steps = [
 ];
 
 const Navigation = ({ params }: { params: { step: string } }) => {
+	const form = useFormStore((state: any) => state.form);
 	const step = Number(params.step);
 	return (
 		<>
@@ -130,7 +134,13 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 									) : (
 										<Link
 											href={stepIndicator.href}
-											className="group"
+											className={cn(
+												"group",
+												checkStepBasedOnForm(form) <
+													stepIdx
+													? "pointer-events-none"
+													: ""
+											)}
 										>
 											<span
 												className="absolute left-0 top-0 h-full w-1 bg-transparent group-hover:bg-gray-200 lg:bottom-0 lg:top-auto lg:h-1 lg:w-full"
