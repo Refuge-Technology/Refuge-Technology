@@ -22,6 +22,7 @@ const HomeInfo = () => {
 	});
 
 	const onSubmit = (data: THomeInfoSchema) => {
+		console.log(data)
 		updateForm(data);
 		router.push("/hosts/apply/step/2");
 	};
@@ -46,14 +47,13 @@ const HomeInfo = () => {
 						name="home_description"
 						rows={8}
 						className={cn(
-							"block w-full rounded-md border-0 py-1.5 px-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray",
+							"block w-full rounded-md border-0 py-1.5 px-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-background-600 outline-none sm:text-sm sm:leading-6 max-sm:border-2 max-sm:border-gray",
 							errors?.home_description?.message
 								? "ring-red-400 focus:ring-red-400 bg-red-100"
 								: ""
 						)}
 						defaultValue={""}
 						maxLength={2000}
-						required
 					/>
 				</div>
 				<p className="mt-3 text-sm leading-6 text-gray-600">

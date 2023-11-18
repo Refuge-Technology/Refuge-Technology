@@ -48,7 +48,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="first_name"
-						required
 						id="first_name"
 						autoComplete="given-name"
 					/>
@@ -68,7 +67,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="last_name"
-						required
 						id="last_name"
 						autoComplete="family-name"
 					/>
@@ -86,7 +84,6 @@ const PersonalInfo = () => {
 					<FormInput
 						register={{ ...register("email") }}
 						errors={errors}
-						required
 						id="email"
 						type="email"
 						name="email"
@@ -105,7 +102,6 @@ const PersonalInfo = () => {
 				<div className="mt-2">
 					<select
 						{...register("country")}
-						required
 						id="country"
 						name="country"
 						autoComplete="country-name"
@@ -133,7 +129,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="street_address"
-						required
 						id="street_address"
 						autoComplete="street-address"
 					/>
@@ -153,7 +148,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="city"
-						required
 						id="city"
 						autoComplete="address-level2"
 					/>
@@ -173,7 +167,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="state"
-						required
 						id="state"
 						autoComplete="address-level1"
 					/>
@@ -193,7 +186,6 @@ const PersonalInfo = () => {
 						errors={errors}
 						type="text"
 						name="zip"
-						required
 						id="zip"
 						autoComplete="postal-code"
 					/>

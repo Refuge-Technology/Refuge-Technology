@@ -1,5 +1,5 @@
 export const checkStepBasedOnForm = (form: any): number => {
-	if (form.house_description) {
+	if (form.home_description) {
 		
 		return 2;
 	}

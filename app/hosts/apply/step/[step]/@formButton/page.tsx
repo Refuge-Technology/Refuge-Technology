@@ -4,7 +4,12 @@ import { useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
 import { checkStepBasedOnForm } from "@/utils/formStepChecker";
 
-const FormButton = ({ params }: { params: { step: string } }) => {
+type TProps = {
+	params: { step: string };
+	formBasedOnSteps: string;
+};
+
+const FormButton = ({ params, formBasedOnSteps }: TProps) => {
 	const router = useRouter();
 	const step = Number(params.step);
 	const form = useFormStore((state: any) => state.form);
@@ -21,7 +26,7 @@ const FormButton = ({ params }: { params: { step: string } }) => {
 			)}
 			<button
 				className="rounded-md bg-background-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-background-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500 capitalize"
-				form="personalInfo"
+				form={formBasedOnSteps}
 			>
 				{checkStepBasedOnForm(form) > step ? "update" : "next"}
 			</button>

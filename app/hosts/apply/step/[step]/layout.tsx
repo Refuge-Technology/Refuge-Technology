@@ -1,54 +1,57 @@
 import React from "react";
 import { HostForm } from "./hostForm";
+import FormButton from "./@formButton/page";
+import PersonalInfo from "./@personalInfo/page";
+import HomeInfo from "./@homeInfo/page";
+import ContactInfo from "./@contactInfo/page";
 
 type TProps = {
-	children: React.ReactNode;
 	params: { step: string };
-	personalInfo: React.ReactNode;
-	homeInfo: React.ReactNode;
-	contactInfo: React.ReactNode;
 	navigation: React.ReactNode;
-	formButton: React.ReactNode;
 };
 
-type DescriptionProps = {
+type StepProps = {
 	title: string;
+	form_id: string;
 	description: string;
+	component: React.ReactNode;
 };
 
-const Step = ({
-	params,
-	personalInfo,
-	homeInfo,
-	contactInfo,
-	navigation,
-	formButton,
-}: TProps) => {
-	const renderDescriptionBasedOnStep = (step: number): DescriptionProps => {
+const Step = ({ params, navigation }: TProps) => {
+	const step = Number(params.step);
+	const renderPropsBasedOnStep = (step: number): StepProps => {
 		switch (step) {
 			case 0:
 				return {
 					title: "Personal Information",
+					form_id: "personalInfo",
 					description:
 						"Please provide your personal information as it is displayed on your government issued identification. This data will be securely used for vetting by the Shelter team and displayed to humanitarian workers. Shelter will never share or sell your data with third parties.",
+					component: <PersonalInfo />,
 				};
 			case 1:
 				return {
 					title: "Room/Home Information",
+					form_id: "homeInfo",
 					description:
 						"Please describe the shelter you are offering in as much detail as possible with supporting photos and media. This information will be used by and displayed to NGOs and their workers to match your host listing with displaced people.",
+					component: <HomeInfo />,
 				};
 			case 2:
 				return {
 					title: "Contact",
+					form_id: "contactInfo",
 					description:
 						"Please let us know your preferred contact method. Upon submission, your application will be viewed and you will be contacted by the Shelter team within 1-2 days.",
+					component: <ContactInfo />,
 				};
 			default:
 				return {
 					title: "Server Error",
+					form_id: "serverError",
 					description:
 						"Could not find the page you were looking for.",
+					component: <div>404 page not found</div>,
 				};
 		}
 	};
@@ -60,33 +63,23 @@ const Step = ({
 				<div className="grid grid-cols-1 gap-x-8 gap-y-4 p-0 sm:px-10 md:grid-cols-3 ">
 					<div className="px-4 sm:px-0 h-fit ">
 						<h2 className="text-base font-semibold leading-7 text-secondary">
-							{
-								renderDescriptionBasedOnStep(Number(params.step))
-									.title
-								}
+							{renderPropsBasedOnStep(step).title}
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-links	">
-							{
-								renderDescriptionBasedOnStep(Number(params.step))
-								.description
-							}
+							{renderPropsBasedOnStep(step).description}
 						</p>
 					</div>
-					{/* <form className="bg-white justify-self-center h-fit w-full max-w-3xl shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
-						<div className="px-4 py-6 sm:p-8">
-						<div className="grid  max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-						{renderPageBasedOnStep(Number(params.step))}
-						</div>
-						</div>
-					</form> */}
 					<HostForm
-						personalInfo={personalInfo}
-						homeInfo={homeInfo}
-						contactInfo={contactInfo}
+						renderComponentBasedOnStep={
+							renderPropsBasedOnStep(step).component
+						}
 						params={params}
-						/>
+					/>
 				</div>
-				{formButton}
+				<FormButton
+					params={params}
+					formBasedOnSteps={renderPropsBasedOnStep(step).form_id}
+				/>
 			</div>
 		</>
 	);
