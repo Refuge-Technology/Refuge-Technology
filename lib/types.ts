@@ -23,6 +23,17 @@ export const personalInfoSchema = z.object({
 	zip: z.string().min(3, "Zip must be at least 3 characters long"),
 });
 
+export const homeInfoSchema = z.object({
+	home_description: z
+		.string()
+		.min(
+			50,
+			"The description of your property must be atleast 50 characters long"
+		),
+});
+
 export type TSignInSchema = z.infer<typeof signInSchema>;
 
 export type TPersonalInfoSchema = z.infer<typeof personalInfoSchema>;
+
+export type THomeInfoSchema = z.infer<typeof homeInfoSchema>;

@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { useFormStore } from "@/store";
 import Link from "next/link";
-import { checkStepBasedOnForm } from "./../../../../../../utils/formStepChecker";
+import { checkStepBasedOnForm } from "@/utils/formStepChecker";
 
 const steps = [
 	{
@@ -247,10 +247,12 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 							) : (
 								<Link
 									href={stepIndicator.href}
-									className={cn("block h-2.5 w-2.5 rounded-full bg-background-200 hover:bg-background-400",checkStepBasedOnForm(form) <
-									stepIndex
-									? "pointer-events-none"
-									: "" )}
+									className={cn(
+										"block h-2.5 w-2.5 rounded-full bg-background-200 hover:bg-background-400",
+										checkStepBasedOnForm(form) < stepIndex
+											? "pointer-events-none"
+											: ""
+									)}
 								>
 									<span className="sr-only">
 										{stepIndicator.name}

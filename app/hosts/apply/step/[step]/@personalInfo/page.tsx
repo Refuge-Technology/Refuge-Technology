@@ -7,7 +7,7 @@ import { personalInfoSchema, TPersonalInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
-import FormInput from "./formInput";
+import FormInput from "../formInput";
 
 const PersonalInfo = () => {
 	const router = useRouter();

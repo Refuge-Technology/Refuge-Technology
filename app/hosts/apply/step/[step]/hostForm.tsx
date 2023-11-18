@@ -1,6 +1,7 @@
 
 import React from "react";
 import PersonalInfo from "./@personalInfo/page";
+import HomeInfo  from "./@homeInfo/page";
 
 type TProps = {
 	params: { step: string };
@@ -16,7 +17,7 @@ const HostForm = ({ personalInfo, homeInfo, contactInfo, params }: TProps) => {
 			case 0:
 				return <PersonalInfo />;
 			case 1:
-				return homeInfo;
+				return <HomeInfo />;
 			case 2:
 				return contactInfo;
 			default:
