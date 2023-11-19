@@ -1,0 +1,35 @@
+[
+	{
+		"id": "01",
+		"title": "Personal Information",
+		"form_id": "personalInfo",
+		"description": "Please provide your personal information as it is displayed on your government issued identification. This data will be securely used for vetting by the Shelter team and displayed to humanitarian workers. Shelter will never share or sell your data with third parties.",
+		"component": "PersonalInfo",
+		"nav": {
+			"description": "Used for verification and displayed to humanitarian orgs.",
+			"href": "/hosts/apply/step/0"
+		}
+	},
+	{
+		"id": "02",
+		"title": "Room/Home Information",
+		"form_id": "homeInfo",
+		"description": "Please describe the shelter you are offering in as much detail as possible with supporting photos and media. This information will be used by and displayed to NGOs and their workers to match your host listing with displaced people.",
+		"component": "HomeInfo",
+		"nav": {
+			"description": "Provide a description of the shelter you are offering.",
+			"href": "/hosts/apply/step/1"
+		}
+	},
+	{
+		"id": "03",
+		"title": "Contact",
+		"form_id": "contactInfo",
+		"description": "Please let us know your preferred contact method. Upon submission, your application will be viewed and you will be contacted by the Shelter team within 1-2 days.",
+		"component": "ContactInfo",
+		"nav": {
+			"description": "Indicate your method of contact and submit your application for review",
+			"href": "/hosts/apply/step/2"
+		}
+	}
+]

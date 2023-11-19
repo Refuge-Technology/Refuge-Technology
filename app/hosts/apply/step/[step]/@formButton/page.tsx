@@ -5,13 +5,12 @@ import { useRouter } from "next/navigation";
 import { checkStepBasedOnForm } from "@/utils/formStepChecker";
 
 type TProps = {
-	params: { step: string };
+	step: number ;
 	formBasedOnSteps: string;
 };
 
-const FormButton = ({ params, formBasedOnSteps }: TProps) => {
+const FormButton = ({ step, formBasedOnSteps }: TProps) => {
 	const router = useRouter();
-	const step = Number(params.step);
 	const form = useFormStore((state: any) => state.form);
 
 	return (

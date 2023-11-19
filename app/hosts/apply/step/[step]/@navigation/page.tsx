@@ -4,33 +4,10 @@ import { CheckIcon } from "@heroicons/react/24/solid";
 import { useFormStore } from "@/store";
 import Link from "next/link";
 import { checkStepBasedOnForm } from "@/utils/formStepChecker";
+import copy from "../copy.json";
 
-const steps = [
-	{
-		id: "01",
-		name: "Personal Information",
-		description:
-			"Used for verification and displayed to humanitarian orgs.",
-		href: "/hosts/apply/step/0",
-	},
-	{
-		id: "02",
-		name: "Room/Home Information",
-		description: "Provide a description of the shelter you are offering.",
-		href: "/hosts/apply/step/1",
-	},
-	{
-		id: "03",
-		name: "Contact & Submit",
-		description:
-			"Indicate your method of contact and submit your application for review.",
-		href: "/hosts/apply/step/2",
-	},
-];
-
-const Navigation = ({ params }: { params: { step: string } }) => {
+const Navigation = ({ step }: { step: number }) => {
 	const form = useFormStore((state: any) => state.form);
-	const step = Number(params.step);
 	return (
 		<>
 			<div className="hidden lg:block lg:border-b lg:border-t lg:border-gray-200">
@@ -42,7 +19,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 						role="list"
 						className="overflow-hidden rounded-md lg:flex lg:rounded-none lg:border-l lg:border-r lg:border-gray-200"
 					>
-						{steps.map((stepIndicator, stepIdx) => (
+						{copy.map((stepIndicator, stepIdx) => (
 							<li
 								key={stepIndicator.id}
 								className="relative overflow-hidden lg:flex-1"
@@ -52,7 +29,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 										stepIdx === step
 											? "rounded-t-md border-b-0"
 											: "",
-										stepIdx === steps.length - 1
+										stepIdx === copy.length - 1
 											? "rounded-b-md border-t-0"
 											: "",
 										"overflow-hidden border border-gray-200 lg:border-0"
@@ -60,7 +37,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 								>
 									{stepIdx < step ? (
 										<Link
-											href={stepIndicator.href}
+											href={stepIndicator.nav.href}
 											className="group"
 										>
 											<span
@@ -85,11 +62,11 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 												</span>
 												<span className="ml-4 mt-0.5 flex min-w-0 flex-col">
 													<span className="text-sm font-medium">
-														{stepIndicator.name}
+														{stepIndicator.title}
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.description
+															stepIndicator.nav.description
 														}
 													</span>
 												</span>
@@ -97,7 +74,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 										</Link>
 									) : stepIdx == step ? (
 										<Link
-											href={stepIndicator.href}
+											href={stepIndicator.nav.href}
 											aria-current="step"
 										>
 											<span
@@ -121,11 +98,11 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 												</span>
 												<span className="ml-4 mt-0.5 flex min-w-0 flex-col">
 													<span className="text-sm font-medium text-background-500">
-														{stepIndicator.name}
+														{stepIndicator.title}
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.description
+															stepIndicator.nav.description
 														}
 													</span>
 												</span>
@@ -133,7 +110,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 										</Link>
 									) : (
 										<Link
-											href={stepIndicator.href}
+											href={stepIndicator.nav.href}
 											className={cn(
 												"group",
 												checkStepBasedOnForm(form) <
@@ -163,11 +140,11 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 												</span>
 												<span className="ml-4 mt-0.5 flex min-w-0 flex-col">
 													<span className="text-sm font-medium text-gray-500">
-														{stepIndicator.name}
+														{stepIndicator.title}
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.description
+															stepIndicator.nav.description
 														}
 													</span>
 												</span>
@@ -210,23 +187,23 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 				aria-label="Progress"
 			>
 				<p className="text-sm font-medium">
-					Step {step + 1} of {steps.length}
+					Step {step + 1} of {copy.length}
 				</p>
 				<ol role="list" className="ml-8 flex items-center space-x-5">
-					{steps.map((stepIndicator, stepIndex) => (
-						<li key={stepIndicator.name}>
+					{copy.map((stepIndicator, stepIndex) => (
+						<li key={stepIndicator.title}>
 							{stepIndex < step ? (
 								<Link
-									href={stepIndicator.href}
+									href={stepIndicator.nav.href}
 									className="block h-2.5 w-2.5 rounded-full bg-background-500 hover:bg-background-800"
 								>
 									<span className="sr-only">
-										{stepIndicator.name}
+										{stepIndicator.title}
 									</span>
 								</Link>
 							) : stepIndex == step ? (
 								<Link
-									href={stepIndicator.href}
+									href={stepIndicator.nav.href}
 									className="relative flex items-center justify-center"
 									aria-current="step"
 								>
@@ -241,12 +218,12 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 										aria-hidden="true"
 									/>
 									<span className="sr-only">
-										{stepIndicator.name}
+										{stepIndicator.title}
 									</span>
 								</Link>
 							) : (
 								<Link
-									href={stepIndicator.href}
+									href={stepIndicator.nav.href}
 									className={cn(
 										"block h-2.5 w-2.5 rounded-full bg-background-200 hover:bg-background-400",
 										checkStepBasedOnForm(form) < stepIndex
@@ -255,7 +232,7 @@ const Navigation = ({ params }: { params: { step: string } }) => {
 									)}
 								>
 									<span className="sr-only">
-										{stepIndicator.name}
+										{stepIndicator.title}
 									</span>
 								</Link>
 							)}
