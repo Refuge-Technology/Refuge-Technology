@@ -32,8 +32,22 @@ export const homeInfoSchema = z.object({
 		),
 });
 
+export const contactInfoSchema = z
+	.object({
+		contact_by_email: z.boolean(),
+		contact_by_phone: z.boolean(),
+		contact_by_whatsApp: z.boolean(),
+	})
+	.refine(
+		({ contact_by_email, contact_by_phone, contact_by_whatsApp }) =>
+			contact_by_email || contact_by_phone || contact_by_whatsApp,
+		{ message: "you must tick atleast 1 method of contact" }
+	);
+
 export type TSignInSchema = z.infer<typeof signInSchema>;
 
 export type TPersonalInfoSchema = z.infer<typeof personalInfoSchema>;
 
 export type THomeInfoSchema = z.infer<typeof homeInfoSchema>;
+
+export type TContactInfoSchema = z.infer<typeof contactInfoSchema>;
