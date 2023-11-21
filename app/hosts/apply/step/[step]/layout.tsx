@@ -35,10 +35,7 @@ const Step = ({ params }: { params: { step: string } }) => {
 						}
 					/>
 				</div>
-				<FormButton
-					step={step}
-					formBasedOnSteps={copy[step].form_id}
-				/>
+				<FormButton step={step} formBasedOnSteps={copy[step].form_id} />
 			</div>
 		</>
 	);

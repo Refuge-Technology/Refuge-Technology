@@ -41,7 +41,7 @@ export const contactInfoSchema = z
 	.refine(
 		({ contact_by_email, contact_by_phone, contact_by_whatsApp }) =>
 			contact_by_email || contact_by_phone || contact_by_whatsApp,
-		{ message: "you must tick atleast 1 method of contact" }
+		{ message: "you must tick atleast 1 method of contact.", path: ["contact_method"] }
 	);
 
 export type TSignInSchema = z.infer<typeof signInSchema>;

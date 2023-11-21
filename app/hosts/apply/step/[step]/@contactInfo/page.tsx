@@ -1,12 +1,18 @@
 "use client";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { FieldErrors, useForm } from "react-hook-form";
 import { contactInfoSchema, TContactInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
 import FormInput from "../formInput";
 import { cn } from "@/utils/cn";
+
+type customErrors = FieldErrors<TContactInfoSchema> & {
+	contact_method?: {
+		message: string;
+	};
+};
 
 const ContactInfo = () => {
 	const router = useRouter();
@@ -36,6 +42,11 @@ const ContactInfo = () => {
 			<legend className="text-sm font-semibold leading-6 text-gray-900">
 				Preferred Method of Contact
 			</legend>
+			{errors && (
+				<h2 className="text-red-600">
+					{(errors as customErrors)?.contact_method?.message}
+				</h2>
+			)}
 			<div className="mt-6 space-y-6">
 				<div className="relative flex gap-x-3">
 					<div className="flex h-6 items-center">
@@ -44,7 +55,7 @@ const ContactInfo = () => {
 							id="contact_by_email"
 							name="contact_by_email"
 							type="checkbox"
-							className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600"
+							className="h-4 w-4 rounded border-gray-300 accent-background-800"
 						/>
 					</div>
 					<div className="text-sm leading-6">
@@ -67,7 +78,7 @@ const ContactInfo = () => {
 							id="contact_by_phone"
 							name="contact_by_phone"
 							type="checkbox"
-							className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-600"
+							className="h-4 w-4 rounded accent-background-800 border-2 border-red-300"
 						/>
 					</div>
 					<div className="text-sm leading-6">
@@ -91,7 +102,7 @@ const ContactInfo = () => {
 							id="contact_by_whatsApp"
 							name="contact_by_whatsApp"
 							type="checkbox"
-							className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-indigo-600"
+							className="h-4 w-4 rounded border-gray-300  accent-background-800"
 						/>
 					</div>
 					<div className="text-sm leading-6">
