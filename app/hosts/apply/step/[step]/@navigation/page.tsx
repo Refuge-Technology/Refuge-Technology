@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/utils/cn";
+import React, { useEffect } from "react";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { useFormStore } from "@/store";
 import Link from "next/link";
@@ -66,7 +67,8 @@ const Navigation = ({ step }: { step: number }) => {
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.nav.description
+															stepIndicator.nav
+																.description
 														}
 													</span>
 												</span>
@@ -102,7 +104,8 @@ const Navigation = ({ step }: { step: number }) => {
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.nav.description
+															stepIndicator.nav
+																.description
 														}
 													</span>
 												</span>
@@ -144,7 +147,8 @@ const Navigation = ({ step }: { step: number }) => {
 													</span>
 													<span className="text-sm font-medium text-gray-500">
 														{
-															stepIndicator.nav.description
+															stepIndicator.nav
+																.description
 														}
 													</span>
 												</span>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import countries from "@/assets/json-objects/countries.json";
 
 import { useForm } from "react-hook-form";
@@ -15,9 +15,7 @@ const PersonalInfo = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isSubmitting },
-		setError,
-		clearErrors,
+		formState: { errors },
 	} = useForm<TPersonalInfoSchema>({
 		resolver: zodResolver(personalInfoSchema),
 	});
@@ -26,8 +24,6 @@ const PersonalInfo = () => {
 		updateForm(data);
 		router.push("/hosts/apply/step/1");
 	};
-
-	//TODO: ADD ERROR HANDLING
 
 	return (
 		<form

@@ -1,25 +1,29 @@
 "use client";
-import React from "react";
+import React, {useEffect} from "react";
 import { useForm } from "react-hook-form";
 import { homeInfoSchema, THomeInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
-import FormInput from "../formInput";
 import { cn } from "@/utils/cn";
 
 const HomeInfo = () => {
 	const router = useRouter();
+	const form = useFormStore((state: any) => state.form);
 	const updateForm = useFormStore((state: any) => state.updateForm);
 	const {
 		register,
 		handleSubmit,
 		formState: { errors, isSubmitting },
-		setError,
-		clearErrors,
 	} = useForm<THomeInfoSchema>({
 		resolver: zodResolver(homeInfoSchema),
 	});
+
+	useEffect(() => {
+		if (!form.first_name) {
+			router.push("/hosts/apply/step/0");
+		}
+	}, []);
 
 	const onSubmit = (data: THomeInfoSchema) => {
 		console.log(data)
@@ -64,26 +68,6 @@ const HomeInfo = () => {
 					Max length: 2000 characters.
 				</p>
 			</div>
-
-			{/* // </Formcard> */}
-			{/* </div> */}
-			{/* // </div> */}
-			{/* <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
-			<button
-			type="button"
-			className="text-sm font-semibold leading-6 text-gray-900"
-			>
-			Cancel
-			</button>
-			<button
-			type="submit"
-			className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-			>
-			Save
-			</button>
-		</div> */}
-			{/* // </form> */}
-			{/* // </div> */}
 		</form>
 	);
 };

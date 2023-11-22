@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { FieldErrors, useForm } from "react-hook-form";
 import { contactInfoSchema, TContactInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,16 +16,24 @@ type customErrors = FieldErrors<TContactInfoSchema> & {
 
 const ContactInfo = () => {
 	const router = useRouter();
+	const form = useFormStore((state: any) => state.form);
 	const updateForm = useFormStore((state: any) => state.updateForm);
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isSubmitting },
-		setError,
-		clearErrors,
+		formState: { errors },
 	} = useForm<TContactInfoSchema>({
 		resolver: zodResolver(contactInfoSchema),
 	});
+
+	useEffect(() => {
+		if (!form.first_name) {
+			router.push("/hosts/apply/step/0");
+		}
+		else if (!form.home_description) {
+			router.push("/hosts/apply/step/1");
+		}
+	}, []);
 
 	const onSubmit = (data: TContactInfoSchema) => {
 		console.log(data);
