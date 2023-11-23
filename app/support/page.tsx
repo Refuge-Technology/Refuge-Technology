@@ -18,7 +18,7 @@ const Resources = () => {
 					Please consider donating by buying us a coffee <a className="text-links underline" href="https://www.buymeacoffee.com/refugetechnology" target="_blank"> here </a> <br></br>
 					Or by scanning the QR Code below:
 		</p>
-		<Image src={QR} height={200}/>
+		<Image alt="qr code" src={QR} height={200}/>
 	</div>;
 };
 
