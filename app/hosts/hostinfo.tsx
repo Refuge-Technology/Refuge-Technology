@@ -66,7 +66,7 @@ const HostInfo = () => {
 							/>
 							<span>
 								<strong className="font-semibold text-gray-900 max-w-prose">
-									Reviewal and Acceptance into the Host Database
+									Reviewal and Acceptance into the Host Database:
 								</strong>{" "}
 								After extensive reviewal by the Shelter team and rigorous security verification, you will either receive a confirmation of rejection or acceptance. If accepted, your host and
 								contact information will be available in a secure database accessible only by NGOs and humanitarian workers.

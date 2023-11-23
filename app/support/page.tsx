@@ -10,12 +10,12 @@ const Resources = () => {
 		</Title>
 		<p className="mt-6 max-sm:mt-2 text-md leading-8 text-justify max-w-prose text-secondary border-none max-sm:justify-center max-sm:px-5 max-sm:py-5">
 					Shelter is an application managed by <a className="text-links underline" href="https://refugetechnology.org" target="_blank"> Refuge Technology </a> - a non-profit collective of 
-					engineers, developers, and volunteers. To run Shelter, we need to pay costs in the form of hosting, data-related costs, and verification costs 
-					as well. If you are interested in supporting Shelter directly, any donations would greatly help in keeping the application running. All donations 
+					engineers, developers, and volunteers. To run Shelter, we need to pay costs in the form of hosting, data storage, and verification requests.
+					<br /> <br />If you are interested in supporting Shelter directly, any donations of any amount would greatly help in keeping the application running. All donations 
 					are strictly used for the application and its operation. 
 		</p>
 		<p className="mt-6 max-sm:mt-2 text-md leading-8 text-justify max-w-prose text-secondary border-none max-sm:justify-center max-sm:px-5 max-sm:py-5">
-					Please consider donating by buying us a coffee <a className="text-links underline" href="https://www.buymeacoffee.com/refugetechnology" target="_blank"> here </a> <br></br>
+					Please consider donating by &quot;buying us a coffee&quot; <a className="text-links underline" href="https://www.buymeacoffee.com/refugetechnology" target="_blank"> here </a> <br></br>
 					Or by scanning the QR Code below:
 		</p>
 		<Image alt="qr code" src={QR} height={200}/>

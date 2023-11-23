@@ -34,12 +34,11 @@ export default function Home() {
 							Refugees Need Your Help
 						</Title>
 						<p className="mt-6 text-lg max-w-prose leading-8 text-primary">
-							Displaced people in Palestine, Israel, Morocco,
-							Libya, Sudan, and Afghanistan desperately need
+							People and families displaced by conflicts and natural disasters desperately need
 							temporary housing.
 						</p>
 						<p className="mt-6 text-lg  max-w-prose leading-8 text-primary">
-							If you reside within one of these countries, please
+							If you reside within one of these countries or in neighboring regions, please
 							consider hosting displaced people in your home.
 						</p>
 					</div>
