@@ -17,7 +17,7 @@ type customErrors = FieldErrors<TContactInfoSchema> & {
 const ContactInfo = () => {
 	const router = useRouter();
 	const form = useFormStore((state: any) => state.form);
-	const updateForm = useFormStore((state: any) => state.updateForm);
+	const resetForm = useFormStore((state: any) => state.resetForm);
 	const {
 		register,
 		handleSubmit,
@@ -29,16 +29,31 @@ const ContactInfo = () => {
 	useEffect(() => {
 		if (!form.first_name) {
 			router.push("/hosts/apply/step/0");
-		}
-		else if (!form.home_description) {
+		} else if (!form.home_description) {
 			router.push("/hosts/apply/step/1");
 		}
 	}, []);
 
-	const onSubmit = (data: TContactInfoSchema) => {
-		console.log(data);
-		// updateForm(data);
-		router.push("/hosts/apply/step/submitted");
+	const onSubmit = async (data: TContactInfoSchema) => {
+		const fullForm = { ...form, ...data };
+		const response = await fetch("/routes/form-submission", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(fullForm),
+		});
+		const responseData = await response.json();
+		resetForm();
+
+		if (!response.ok) {
+			alert("Something went wrong");
+			return;
+		}
+		if (responseData.status != 200) {
+			alert(`Server Error :  ${responseData.error}`);
+		}
+		router.push(responseData.redirect);
 	};
 
 	return (

@@ -8,5 +8,9 @@ export const useFormStore = create<any>()(
 			set((store: any) => ({
 				form: { ...store.form, ...action },
 			})),
+		resetForm: () =>
+			set(() => ({
+				form: {},
+			})),
 	}))
 );

@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { homeInfoSchema, THomeInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,10 +23,9 @@ const HomeInfo = () => {
 		if (!form.first_name) {
 			router.push("/hosts/apply/step/0");
 		}
-	}, []);
+	}, [form.first_name, router]);
 
 	const onSubmit = (data: THomeInfoSchema) => {
-		console.log(data)
 		updateForm(data);
 		router.push("/hosts/apply/step/2");
 	};
