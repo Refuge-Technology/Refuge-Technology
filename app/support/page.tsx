@@ -1,6 +1,7 @@
 import Title from "@/components/title";
 import React from "react";
-import QR from '/public/assets/bmc_qr.png'
+import Image from "next/image";
+import QR from "/public/assets/bmc_qr.png";
 
 const Resources = () => {
 	return <div className="pt-10 max-sm:py-5 space-y-10 md:divide-y divide-links sm:p-8 w-full flex flex-col justify-center items-center grow">
@@ -17,7 +18,7 @@ const Resources = () => {
 					Please consider donating by buying us a coffee <a className="text-links underline" href="https://www.buymeacoffee.com/refugetechnology" target="_blank"> here </a> <br></br>
 					Or by scanning the QR Code below:
 		</p>
-		<img src={QR} height="200"/>
+		<Image src={QR} height={200}/>
 	</div>;
 };
 
