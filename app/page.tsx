@@ -8,6 +8,7 @@ const links = [
 	// { name: "Refugee Resources", href: "/resources" },
 	{ name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Host Now", href: "/hosts/apply" },
+	{ name: "Support Us", href: "/support"},
 ];
 
 export default function Home() {
