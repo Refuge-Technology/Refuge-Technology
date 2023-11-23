@@ -5,7 +5,7 @@ import Title from "@/components/title";
 import { OurResponse } from "@/components/ourresponse";
 
 const links = [
-	{ name: "Refugee Resources", href: "/resources" },
+	// { name: "Refugee Resources", href: "/resources" },
 	{ name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Host Now", href: "/hosts/apply" },
 ];

@@ -29,6 +29,7 @@ export default function HostProfile({ hosts }: TProps) {
 	const searchParams = useSearchParams();
 	const hostid = searchParams.get("host");
 	const [highlightedHost, setHighlightedHost] = useState<Host>({} as Host);
+
 	useEffect(() => {
 		setHighlightedHost(hosts.find((host) => host.id == hostid));
 	}, []);

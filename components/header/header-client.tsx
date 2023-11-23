@@ -35,11 +35,11 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 			href: session ? "/ngo/dashboard" : "/",
 			current: true,
 		},
-		{
-			name: "Refugee Resources",
-			href: "/resources",
-			current: false,
-		},
+		// {
+		// 	name: "Refugee Resources",
+		// 	href: "/resources",
+		// 	current: false,
+		// },
 		{
 			name: "Host Now",
 			href: "/hosts",
