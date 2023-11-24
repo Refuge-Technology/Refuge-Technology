@@ -1,5 +1,44 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Refuge Technology https://www.refugetechnology.org/ presents our application Shelter.  
+
+### Shelter 
+is an application inspired by Internet Activism’s Ukraine Take Shelter application, https://www.ukrainetakeshelter.com/ and our goal is to allow vetted hosts to host refugees or displaced people in their homes from across the world. 
+
+With disasters across the world increasing the spread of homelessness, our team thought this application was necessary for the whole world. 
+
+Hosts can host their homes to displaced or homeless individuals anywhere. Victims can search through hosts, and find one ideal for them. 
+
+## Who we are: 
+We’re a team of developers working to build a solution to homelessness. We aim to provide NGO shelters lists of verified hosts (hosts that are real people and do not have harmful or malicious intentions) that can house displaced within their shelters. We are actively seeking out partnerships with these organizations so that we can help house people across the world. If you have connections to NGO shelters contact us at  refuge_technology@proton.me.
+
+## Host Criteria:
+Hosts must first complete an application with the details of their home including, and provide their contact information.
+This information consists of 
+A physical address
+Email address
+Country
+Zip code
+Description of home with additional images
+
+Next, we verify hosts are real people through either a live interview or video interview where we confirm hosts are real people and do not have malicious intentions by questioning them about their identity, background, and reason for wanting to be a host. 
+
+Finally, after an extensive background check, we can safely allow them to host their home to displaced people in shelters that partnered with us. 
+
+## Goals:
+
+Our current goal is to partner with NGO’s and shelters across the world and provide them with lists of our vetted hosts for their displaced people. We hope that by our partnership we can work together on a shared goal of reducing homelessness in the world. 
+
+Our hosts’s generosity in providing shelter to displaced people is absolutely essential to achieving that goal and we aim to partner with as many official organizations as possible to accomplish this. Our first priority is protecting the safety and property of both our hosts and the displaced people using our application. 
+
+We hope to release our application soon, and are actively seeking partnerships with legitimate NGOs, shelters, and any nonprofit or government organizations that support our work!
+
+## Contact Us: 
+
+We would also appreciate support from any developers, lawyers, or specialists of any kind with unique skills that they can contribute to our organization. To get into contact with us email refuge_technology@proton.me
+
+Or join our discord server https://discord.gg/RQ9QS8hA
+
 ## Getting Started
 
 First, run the development server:
