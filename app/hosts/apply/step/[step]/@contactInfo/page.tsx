@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { FieldErrors, useForm } from "react-hook-form";
 import { contactInfoSchema, TContactInfoSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useFormStore } from "@/store";
+import { useFormLoadingStore, useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
 import FormInput from "../formInput";
 import { cn } from "@/utils/cn";
@@ -17,14 +17,21 @@ type customErrors = FieldErrors<TContactInfoSchema> & {
 const ContactInfo = () => {
 	const router = useRouter();
 	const form = useFormStore((state: any) => state.form);
+	const setFormLoading = useFormLoadingStore((state: any) => state.setFormLoading);
 	const resetForm = useFormStore((state: any) => state.resetForm);
+
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm<TContactInfoSchema>({
 		resolver: zodResolver(contactInfoSchema),
 	});
+
+	useEffect(() => {
+	  setFormLoading(isSubmitting);
+	}, [isSubmitting])
+	
 
 	useEffect(() => {
 		if (!form.first_name) {

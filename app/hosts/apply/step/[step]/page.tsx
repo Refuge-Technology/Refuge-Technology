@@ -9,7 +9,7 @@ import FormButton from "./@formButton/page";
 const Step = ({ params }: { params: { step: string } }) => {
 	const step = Number(params.step);
 
-	if (isNaN(step) || step < 0 || step > 3) {
+	if (isNaN(step) || step < 0 || step > 2) {
 		return <div>404</div>;
 	}
 
