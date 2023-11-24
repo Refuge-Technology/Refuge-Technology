@@ -8,6 +8,7 @@ const links = [
 	// { name: "Refugee Resources", href: "/resources" },
 	{ name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Host Now", href: "/hosts/apply" },
+	{ name: "Support Us", href: "/support"},
 ];
 
 export default function Home() {
@@ -33,13 +34,10 @@ export default function Home() {
 							Refugees Need Your Help
 						</Title>
 						<p className="mt-6 text-lg max-w-prose leading-8 text-primary">
-							Displaced people in Palestine, Israel, Morocco,
-							Libya, Sudan, and Afghanistan desperately need
-							temporary housing.
+						Displaced people affected by conflict and natural disasters desperately need temporary housing.
 						</p>
 						<p className="mt-6 text-lg  max-w-prose leading-8 text-primary">
-							If you reside within one of these countries, please
-							consider hosting displaced people in your home.
+						If you reside near a conflict or disaster area and have the capacity, please consider hosting displaced people in your home using the Shelter application.
 						</p>
 					</div>
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
