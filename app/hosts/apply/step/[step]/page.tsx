@@ -2,7 +2,7 @@ import React from "react";
 import copy from "./copy.json";
 import PersonalInfo from "./@personalInfo/page";
 import HomeInfo from "./@homeInfo/page";
-import ContactInfo from "./@contactInfo/page";
+import ContactInfo from "./@contactInfo/contact-info";
 import Navigation from "./@navigation/page";
 import FormButton from "./@formButton/page";
 
