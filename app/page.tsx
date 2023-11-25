@@ -7,8 +7,8 @@ import Script from "next/script";
 
 const links = [
 	// { name: "Refugee Resources", href: "/resources" },
+	{ name: "Host Now", href: "/hosts" },
 	{ name: "Donate to Aid Orgs", href: "#response" },
-	{ name: "Host Now", href: "/hosts/apply" },
 	{ name: "Support Us", href: "/support"},
 ];
 
@@ -16,7 +16,8 @@ export default function Home() {
 	return (
 		<>
 			<div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-				<Script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js" id="weglot">
+				<Script src="https://cdn.weglot.com/weglot.min.js" />
+				<Script id="Weglot">
 				{` 
 					Weglot.initialize({
 						api_key: ${process.env.WEGLOT_API_KEY}
