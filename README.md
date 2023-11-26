@@ -1,10 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## (Refuge Technology) [https://refugetechnology.org] presents our humanitarian application Shelter.
+## [Refuge Technology](https://refugetechnology.org) presents our humanitarian application Shelter.
 
 ### Shelter
 
-Shelter is a humanitarian and non-profit application inspired by Internet Activism’s (Ukraine Take Shelter)[https://www.ukrainetakeshelter.com/] application. Our goal is to allow vetted hosts to host refugees or displaced people in their homes all over the world, aiming to alleviate the effects of displacement by conflict, disaster, or other events.
+Shelter is a humanitarian and non-profit application inspired by Internet Activism’s [Ukraine Take Shelter](https://www.ukrainetakeshelter.com/) application. Our goal is to allow vetted hosts to host refugees or displaced people in their homes all over the world, aiming to alleviate the effects of displacement by conflict, disaster, or other events.
 
 With disasters & conflict across the world increasing the spread of displacement, we strongly believe an actively maintained and funded software solution is necessary to enable people to share their shelter with those in need.
 
@@ -14,7 +14,7 @@ Hosts can host their homes to displaced individuals anywhere, with special atten
 
 Refuge Technology is a non-profit collective of engineers and volunteers passionate about helping fellow humans through technology & software. We plan on building various applications to help alleviate the effects of natural disasters and conflicts across the world. We are not affiliated with any government or political organization and are completely independent, relying on donations to fund our projects. We plan on offering our products and services for free to NGOs and humanitarian organizations as well as all fellow humans in need regardless of race, creed, religion, or political affiliation.
 
-With Shelter specifically, we aim to provide NGO's & verified humanitarian groups a database of vetted hosts (hosts that are real people and do not have harmful or malicious intentions) that can house displaced individuals within their homes. We are actively seeking out partnerships with these organizations. If you have connections to any NGOs or are a NGO contact us (here)[refuge_technology@proton.me].
+With Shelter specifically, we aim to provide NGO's & verified humanitarian groups a database of vetted hosts (hosts that are real people and do not have harmful or malicious intentions) that can house displaced individuals within their homes. We are actively seeking out partnerships with these organizations. If you have connections to any NGOs or are a NGO contact us [here](refuge_technology@proton.me).
 
 ## Host Criteria:
 
@@ -41,7 +41,7 @@ We are also looking for those with influence or audience to help us spread the w
 
 ## Contact Us:
 
-We would also appreciate support from any developers, lawyers, or specialists with any kind with unique skills that they can contribute to our organization. To get into contact with us email us (here)[mailto:refuge_technology@proton.me] or join our discord server (here)[https://discord.gg/RQ9QS8hA].
+We would also appreciate support from any developers, lawyers, or specialists with any kind with unique skills that they can contribute to our organization. To get into contact with us email us [here](mailto:refuge_technology@proton.me) or join our discord server [here](https://discord.gg/RQ9QS8hA).
 
 ## Getting Started (Developers)
 
