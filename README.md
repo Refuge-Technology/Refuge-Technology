@@ -14,7 +14,7 @@ Hosts can host their homes to displaced individuals anywhere, with special atten
 
 Refuge Technology is a non-profit collective of engineers and volunteers passionate about helping fellow humans through technology & software. We plan on building various applications to help alleviate the effects of natural disasters and conflicts across the world. We are not affiliated with any government or political organization and are completely independent, relying on donations to fund our projects. We plan on offering our products and services for free to NGOs and humanitarian organizations as well as all fellow humans in need regardless of race, creed, religion, or political affiliation.
 
-With Shelter specifically, we aim to provide NGO's & verified humanitarian groups a database of vetted hosts (hosts that are real people and do not have harmful or malicious intentions) that can house displaced individuals within their homes. We are actively seeking out partnerships with these organizations. If you have connections to any NGOs or are a NGO contact us [here](refuge_technology@proton.me).
+With Shelter specifically, we aim to provide NGO's & verified humanitarian groups a database of vetted hosts (hosts that are real people and do not have harmful or malicious intentions) that can house displaced individuals within their homes. We are actively seeking out partnerships with these organizations. If you have connections to any NGOs or are a NGO contact us [here](mailto:refuge_technology@proton.me).
 
 ## Host Criteria:
 
