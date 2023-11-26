@@ -14,7 +14,8 @@ export const personalInfoSchema = z.object({
 		.min(3, "Last name must be at least 3 characters long"),
 	email: z.string().email(),
 	country: z.string(),
-	// phone: z.string().min(3, "Phone must be at least 3 characters long"),
+	phone_code: z.string(),
+	phone_number: z.string().min(3, "Phone must be at least 3 characters long"),
 	street_address: z
 		.string()
 		.min(3, "Street address must be at least 3 characters long"),
@@ -56,7 +57,8 @@ export const fullFormSchema = z.object({
 		.min(3, "Last name must be at least 3 characters long"),
 	email: z.string().email(),
 	country: z.string(),
-	// phone: z.string().min(3, "Phone must be at least 3 characters long"),
+	phone_code: z.string(),
+	phone_number: z.string().min(3, "Phone must be at least 3 characters long"),
 	street_address: z
 		.string()
 		.min(3, "Street address must be at least 3 characters long"),
