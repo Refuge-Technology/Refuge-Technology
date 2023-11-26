@@ -89,33 +89,7 @@ const PersonalInfo = () => {
 				</div>
 			</div>
 
-			<div className="sm:col-span-4">
-				<label
-					htmlFor="country"
-					className="block text-sm font-medium leading-6 text-gray-900"
-				>
-					Country
-				</label>
-				<div className="mt-2">
-					<select
-						{...register("country")}
-						id="country"
-						name="country"
-						autoComplete="country-name"
-						className="block w-full px-4 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-background-500 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
-					>
-						{countries
-							.sort((a, b) => (a.name > b.name ? 1 : -1))
-							.map((country, index) => (
-								<option key={index} value={country.name}>
-									{country.name}
-								</option>
-							))}
-					</select>
-				</div>
-			</div>
-
-			<div className="sm:col-span-4">
+			<div className="sm:col-span-3">
 				<label
 					htmlFor="phone-number"
 					className="block text-sm font-medium leading-6 text-gray-900"
@@ -142,6 +116,33 @@ const PersonalInfo = () => {
 					</PhoneFormInput>
 				</div>
 			</div>
+
+			<div className="sm:col-span-2">
+				<label
+					htmlFor="country"
+					className="block text-sm font-medium leading-6 text-gray-900"
+				>
+					Country
+				</label>
+				<div className="mt-2">
+					<select
+						{...register("country")}
+						id="country"
+						name="country"
+						autoComplete="country-name"
+						className="block w-full px-4 rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-background-500 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
+					>
+						{countries
+							.sort((a, b) => (a.name > b.name ? 1 : -1))
+							.map((country, index) => (
+								<option key={index} value={country.name}>
+									{country.name}
+								</option>
+							))}
+					</select>
+				</div>
+			</div>
+			
 
 			<div className="col-span-full">
 				<label
