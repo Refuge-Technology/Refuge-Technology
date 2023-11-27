@@ -16,6 +16,7 @@ export default function Home() {
 	return (
 		<>
 			<div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+			<Script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/98da6c5031b651ede82a5f44/script.js" />
 				<img
 					src="https://images.unsplash.com/photo-1660479643704-2acf8f98d8c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
 					alt=""
