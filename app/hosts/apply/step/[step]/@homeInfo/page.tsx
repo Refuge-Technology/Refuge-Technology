@@ -8,10 +8,8 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/utils/cn";
 import FormInput from "../formInput";
 
-// const number_of_rooms = ["1", "2", "3", "4", "5", "6", "7", "8+"];
-
 const HomeInfo = () => {
-	const number_of_rooms = [
+	const numberOfRooms = [
 		{ value: 1, label: "1" },
 		{ value: 2, label: "2" },
 		{ value: 3, label: "3" },
@@ -40,7 +38,11 @@ const HomeInfo = () => {
 	}, [form.first_name, router]);
 
 	const onSubmit = (data: THomeInfoSchema) => {
-		updateForm(data);
+		if (data.property_address_same_as_address) {
+			updateForm({ ...data, property_address: form.street_address });
+		} else {
+			updateForm(data);
+		}
 		router.push("/hosts/apply/step/2");
 	};
 
@@ -64,7 +66,7 @@ const HomeInfo = () => {
 						name="number_of_rooms"
 						className="block w-1/3 px-4 rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-background-500 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
 					>
-						{number_of_rooms.map((number, index) => (
+						{numberOfRooms.map((number, index) => (
 							<option key={index} value={number.value}>
 								{number.label}
 							</option>
@@ -86,7 +88,7 @@ const HomeInfo = () => {
 						name="number_of_occupants"
 						className="block w-1/4 px-4 rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-background-500 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
 					>
-						{number_of_rooms.map((number, index) => (
+						{numberOfRooms.map((number, index) => (
 							<option key={index} value={number.value}>
 								{number.label}
 							</option>

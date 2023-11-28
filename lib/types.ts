@@ -5,6 +5,10 @@ export const signInSchema = z.object({
 	password: z.string().min(3, "Password must be at least 3 characters long"),
 });
 
+export const mailingListSchema = z.object({
+	email: z.string().email(),
+});
+
 export const personalInfoSchema = z.object({
 	first_name: z
 		.string()
@@ -26,14 +30,8 @@ export const personalInfoSchema = z.object({
 
 export const homeInfoSchema = z
 	.object({
-		number_of_rooms: z.preprocess(
-			(a) => parseInt(z.string().parse(a), 10),
-			z.number().positive().min(1, "Number of rooms must be at least 1")
-		),
-		number_of_occupants: z.preprocess(
-			(a) => parseInt(z.string().parse(a), 10),
-			z.number().positive().min(1, "Number of rooms must be at least 1")
-		),
+		number_of_rooms: z.coerce.number().min(1).max(9),
+		number_of_occupants: z.coerce.number().min(1).max(9),
 		property_address: z.string(),
 		property_address_same_as_address: z.boolean(),
 		home_description: z
@@ -54,6 +52,7 @@ export const homeInfoSchema = z
 
 export const contactInfoSchema = z
 	.object({
+		preferred_language: z.string(),
 		contact_by_email: z.boolean(),
 		contact_by_phone: z.boolean(),
 		contact_by_whatsApp: z.boolean(),
@@ -85,18 +84,31 @@ export const fullFormSchema = z
 			.string()
 			.min(3, "Street address must be at least 3 characters long"),
 		city: z.string().min(3, "City must be at least 3 characters long"),
-		state: z.string().min(3, "State must be at least 3 characters long"),
+		state: z.string().min(2, "State must be at least 2 characters long"),
 		zip: z.string().min(3, "Zip must be at least 3 characters long"),
+		number_of_rooms: z.coerce.number().min(1),
+		number_of_occupants: z.coerce.number().min(1),
+		property_address: z.string(),
+		property_address_same_as_address: z.boolean(),
 		home_description: z
 			.string()
 			.min(
 				50,
-				"The description of your property must be atleast 50 characters long"
+				"The description of your property must be at least 50 characters long"
 			),
+		preferred_language: z.string(),
 		contact_by_email: z.boolean(),
 		contact_by_phone: z.boolean(),
 		contact_by_whatsApp: z.boolean(),
 	})
+	.refine(
+		({ property_address, property_address_same_as_address }) =>
+			property_address_same_as_address || property_address.length > 3,
+		{
+			message: "you must provide a property address.",
+			path: ["property_address"],
+		}
+	)
 	.refine(
 		({ contact_by_email, contact_by_phone, contact_by_whatsApp }) =>
 			contact_by_email || contact_by_phone || contact_by_whatsApp,
@@ -115,3 +127,5 @@ export type THomeInfoSchema = z.infer<typeof homeInfoSchema>;
 export type TContactInfoSchema = z.infer<typeof contactInfoSchema>;
 
 export type TFullFormSchema = z.infer<typeof fullFormSchema>;
+
+export type TMailingListSchema = z.infer<typeof mailingListSchema>;

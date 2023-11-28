@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormLoadingStore, useFormStore } from "@/store";
 import { useRouter } from "next/navigation";
 
+const listOfLanguages = ["English", "French", "Spanish", "Arabic"];
+
 type customErrors = FieldErrors<TContactInfoSchema> & {
 	contact_method?: {
 		message: string;
@@ -30,7 +32,7 @@ const ContactInfo = () => {
 
 	useEffect(() => {
 		setFormLoading(isSubmitting);
-	}, [isSubmitting]);
+	}, [setFormLoading, isSubmitting]);
 
 	useEffect(() => {
 		if (!form.first_name) {
@@ -68,7 +70,29 @@ const ContactInfo = () => {
 			id="contactInfo"
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<legend className="text-sm font-semibold leading-6 text-gray-900">
+			<div className="sm:col-span-3">
+				<label
+					htmlFor="number_of_occupants"
+					className="block text-sm font-semibold leading-6 text-gray-900"
+				>
+					Preferred Language
+				</label>
+				<div className="mt-2">
+					<select
+						{...register("preferred_language")}
+						id="preferred_language"
+						name="preferred_language"
+						className="block w-1/5 px-4 rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-background-500 max-sm:border-2 max-sm:border-gray sm:max-w-xs sm:text-sm sm:leading-6"
+					>
+						{listOfLanguages.map((language, index) => (
+							<option key={index} value={language}>
+								{language}
+							</option>
+						))}
+					</select>
+				</div>
+			</div>
+			<legend className="text-sm mt-4 font-semibold leading-6 text-gray-900">
 				Preferred Method of Contact
 			</legend>
 			{errors && (
