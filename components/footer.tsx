@@ -24,7 +24,7 @@ const Footer = () => {
 				</div>
 				<div className="mt-8 md:order-1 md:mt-0">
 					<p className="text-xs leading-5 text-center text-white">
-						&copy; 2023 Refuge Technology. All rights reserved.
+						&copy; 2023 Refuge Technology. <a href="/privacypolicy" target="_blank" className="underline"> Privacy Policy </a>
 					</p>
 				</div>
 			</div>

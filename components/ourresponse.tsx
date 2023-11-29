@@ -11,8 +11,12 @@ const OurResponse = () => {
 			Israel & Palestine
 		</h1>
 			<p className="mt-6 text-lg leading-8 max-w-prose">
-			In the aftermath of the October 7th attacks perpetuated by the Hamas group, an all out conflict has broken out in the already tense region comprising of Palestine and Israel.
-			Innocent civilians in both Israel & the Gaza Strip, many of them children, have lost their homes and way of life as a result.
+			In the aftermath of the October 7th attacks, an all out conflict has broken out in the already tense region comprising of Palestine and Israel.
+			Innocent civilians in Israel, the Gaza Strip, and the West Bank - many of them children, have lost their homes and way of life as a result.
+			</p>
+      <p className="mt-6 text-lg leading-8 max-w-prose">
+			Palestinians in Gaza, in particular, have experienced mass-displacement. According to the United Nations, 1.7 million Palestinians have been internally displaced from their homes
+      in the Gaza strip, with few able to find safety or actively searching for much needed shelter in neighboring Middle Eastern nations.
 			</p>
         <div className="mt-6 text-lg leading-8 max-w-prose">
           <p>
@@ -27,15 +31,15 @@ const OurResponse = () => {
               <PlusCircleIcon className="mt-1 h-5 w-5 flex-none text-red-600" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Hosting Displaced People:</strong> Consider hosting displaced people 
-				if you are able to and reside in Israel, Egypt, the Gaza Strip, the West Bank, or in the general MENA (Middle East North Africa) area.
+				if you are able to and reside in Israel, Egypt, Jordan, the West Bank, or in the general MENA (Middle East North Africa) area. [The Gaza strip is currently 
+        deemed too unsafe to host shelter, therefore - hosts in neighboring nations are urgently needed.]
               </span>
             </li>
             <li className="flex gap-x-3">
               <PlusCircleIcon className="mt-1 h-5 w-5 flex-none text-red-600" aria-hidden="true" />
               <span>
-                <strong className="font-semibold text-gray-900">Donating to Aid Orgs:</strong> Consider donating to aid organizations such as 
-				<a href="https://www.israaid.org/" className='text-links'> IsraAid </a> to support Israeli relief efforts and the <a href="https://www.unrwa.org/" className='text-links'> UNRWA </a>
-				for relief in the Gaza Strip and the Occupied West Bank. 
+                <strong className="font-semibold text-gray-900">Donating to Aid Orgs:</strong> Consider donating to aid organizations actively operating on the
+                 ground within this region.
               </span>
             </li>
           </ul>
