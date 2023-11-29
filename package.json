@@ -24,6 +24,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
+    "react-hot-toast": "^2.4.1",
     "stripe": "^14.3.0",
     "tailwind-merge": "^1.14.0",
     "tw-merge": "^0.0.1-alpha.3",

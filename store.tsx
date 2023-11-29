@@ -14,3 +14,11 @@ export const useFormStore = create<any>()(
 			})),
 	}))
 );
+
+export const useFormLoadingStore = create<any>()((set) => ({
+	formLoading: false,
+	setFormLoading: (action: boolean) =>
+		set(() => ({
+			formLoading: action,
+		})),
+}));
