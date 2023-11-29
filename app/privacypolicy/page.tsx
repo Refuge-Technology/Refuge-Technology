@@ -1,9 +1,10 @@
+import { Footer } from "@/components/footer";
 import Title from "@/components/title";
 
 export default function PrivacyPolicy() {
 	return (
 		<>
-			<div className="pt-5 max-sm:py-3 w-full flex flex-col justify-center items-center grow">
+			<div className="pt-20 w-full flex flex-col items-center grow">
 				<Title className="px-2 py-1.5 text-4xl flex sm:text-6xl">
 					Privacy Policy
 				</Title>
@@ -16,51 +17,40 @@ export default function PrivacyPolicy() {
 					accessing or using Shelter, you agree to the terms outlined
 					in this Privacy Policy.
 				</p>
-			</div>
-			<div className="flex flex-col justify-center items-center grow">
-				<h1 className="text-5xlt racking-tight text-seconday border-none sm:text-4xl">
-					Information We Collect
+				<h1 className="mt-2 text-3xl text-secondary sm:text-2xl pb-5">
+					Information We Collect:
 				</h1>
-				<h2 className="text-secondary border-none">
-					<span className="text-center">
-						{" "}
-						User-Provided Information{" "}
-					</span>{" "}
-					We collect information that you voluntarily provide to us
-					when using Shelter, including:
-				</h2>
-				<ul className="border-none text-secondary py-3">
-					<li>
-						{" "}
-						Contact Information: Name, email address, phone number.{" "}
-					</li>
-					<li>
-						{" "}
-						Property and Home Information: Details about the
-						property offered for shelter.{" "}
-					</li>
-					<li>
-						{" "}
-						Identity Information: Documents for verification
-						purposes.{" "}
-					</li>
-				</ul>
-				<h2 className="text-secondary border-none">
-					<span className="text-center">
-						{" "}
-						Automatically Collected Information:{" "}
-					</span>{" "}
-					We may also collect certain information automatically,
-					including:
-				</h2>
-				<ul className="border-none text-secondary">
-					<li>
-						{" "}
-						Log Data: Information about your interactions with the
-						website (e.g., IP address, browser type, pages visited).
-					</li>
-				</ul>
+				<ol className="max-sm:px-5">
+					<li className="py-1 text-md"> <strong> 1. User-Provided Information: </strong></li>
+					<p className="max-w-prose"> We collect information that you voluntarily provide to us when using Shelter, including: </p>
+				</ol>
+				<ol className="text-sm max-sm:px-5">
+					<li className="black"> Contact Information: Name, email address, phone number</li>
+					<li> Property and Home Information: Details about the property offered for shelter.</li>
+					<li> Identity Information: Documents for verification purposes.</li>
+				</ol>
+				<ol className="px-5">
+					<li className="py-1 text-md"> <strong> 2. Automatically Collected Information: </strong></li>
+				<p className=""> We collect information that you voluntarily provide to us when using Shelter, including: </p>
+				</ol>
+				<ol className="text-sm max-sm:px-5">
+					<li className="black max-w-prose"> Log Data: Information about your interactions with the website e.g., IP address, browser type, pages visited. </li>
+				</ol>
+				<h1 className="mt-2 text-3xl text-secondary max-sm:px-5 sm:text-2xl pb-5">
+					How We Use Your Information
+				</h1>
+				<ol className="max-sm:px-5 pb-10">
+					<li className="py-1 text-md"> <strong> 1. Matching Hosts and Refugees:</strong></li>
+					<p className="max-w-prose">  Facilitating the connection between hosts and registered refugees.</p>
+					<li className="py-1 text-md"> <strong> 2. Verification:</strong></li>
+					<p className="max-w-prose">  Verifying the identity and suitability of hosts and refugees.</p>
+					<li className="py-1 text-md"> <strong> 3. Communication:</strong></li>
+					<p className="max-w-prose">  Sending relevant updates, notifications, and information.</p>
+					<li className="py-1 text-md"> <strong> 4. Legal Compliance:</strong></li>
+					<p className="max-w-prose">  Complying with applicable laws and regulations.</p>
+				</ol>
 			</div>
+			<Footer />
 		</>
 	);
 }

@@ -7,7 +7,7 @@ import Script from "next/script";
 
 const links = [
 	// { name: "Refugee Resources", href: "/resources" },
-	{ name: "Host Now", href: "/hosts" },
+	{ name: "Host Now", href: "/hosts/apply" },
 	{ name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Support Us", href: "/support"},
 ];
