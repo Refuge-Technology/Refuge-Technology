@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-	title: "Shelter - Host Displaced People",
+	title: "Take Refuge - Host Displaced People",
 	description: "Host refugees and displaced people.",
 };
 

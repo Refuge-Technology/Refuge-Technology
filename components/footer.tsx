@@ -11,7 +11,7 @@ const Footer = () => {
 							<HomeIcon className="h-5 -mt-1 text-white" />
 							<h1 className="text-1xl  text-white">{"/>"}</h1>
 						</div>
-						<p>- Shelter - a</p>
+						<p>- Take Refuge - a</p>
 						<a
 							href="https://refugetechnology.org"
 							className="hover-links underline underline-offset-2"

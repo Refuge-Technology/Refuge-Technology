@@ -17,7 +17,7 @@ export default function HowToHost() {
 							</p>
 							<p className="mt-6 leading-7 text-secondary">
 								The following page explains how to host
-								displaced people using the Shelter platform.
+								displaced people using the Take Refuge platform.
 							</p>
 						</div>
 						<div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">

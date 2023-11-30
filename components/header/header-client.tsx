@@ -14,26 +14,14 @@ import Link from "next/link";
 
 import type { Session } from "@supabase/auth-helpers-nextjs";
 import AuthButton from "../auth-button";
-
-// const user = {
-// 	name: "Tom Cook",
-// 	email: "tom@example.com",
-// 	imageUrl:
-// 		"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-// };
-
-// const userNavigation = [
-// 	{ name: "Your Profile", href: "#" },
-// 	{ name: "Settings", href: "#" },
-// 	{ name: "Sign out", href: "#" },
-// ];
+// import Logo from "../public/assets/LOGO.png"
 
 const HeaderClient = ({ session }: { session: Session | null }) => {
 	const navigation = [
 		{
 			name: session ? "Dashboard" : "Home",
 			href: session ? "/ngo/dashboard" : "/",
-			current: true,
+			current: true
 		},
 		// {
 		// 	name: "Refugee Resources",
@@ -85,8 +73,8 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 									<h1 className="text-1xl -mt-3 text-white">
 										{"/>"}
 									</h1>
-									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary">
-										Shelter
+									<h3 className="pl-1 text-3xl font-light tracking-wider text-primary max-sm:text-base">
+										TakeRefuge
 									</h3>
 								</Link>
 								<div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
@@ -113,10 +101,10 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 							</div>
 							<div className="flex items-center">
 								{!session && (
-									<div className="flex-shrink-0 pr-5 max-sm:hidden">
+									<div className="flex-shrink-0 pr-5 max-sm:pl-5">
 										<Link
 											type="button"
-											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-background-600 shadow hover:bg-background-900 hover:shadow-inset hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500"
+											className="relative inline-flex items-center gap-x-1.5 max-sm:text-sm rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-background-600 shadow hover:bg-background-900 hover:shadow-inset hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500"
 											href="/hosts/apply"
 										>
 											<PlusIcon
@@ -127,7 +115,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 										</Link>
 									</div>
 								)}
-								<div className="flex-shrink-0">
+								<div className="flex-shrink-0 max-sm:hidden">
 									<AuthButton session={session} />
 								</div>
 								{/* <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">

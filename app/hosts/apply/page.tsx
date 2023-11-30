@@ -11,11 +11,11 @@ const HostApplicationForm = () => {
 				</Title>
 				<p className="mt-6 max-sm:mt-2 text-md leading-8 text-justify max-w-prose text-secondary border-none max-sm:justify-center max-sm:px-5 max-sm:py-5">
 					Apply and register interest to be one of the first hosts on
-					the Shelter platform. By applying you are expressing your
+					the Take Refuge platform. By applying you are expressing your
 					interest to host displaced people in your home. Your
 					application will be reviewed and you will be contacted by
 					the
-					<em> Shelter </em> team to proceed to the next steps with
+					<em> Take Refuge </em> team to proceed to the next steps with
 					guidance from humanitarian NGOs (Non Government
 					Organizations) and aid groups. The application reviewal
 					process typically takes 1-2 days depending on the volume of

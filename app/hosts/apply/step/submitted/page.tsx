@@ -11,7 +11,7 @@ export default function Submitted() {
 			<Title className=" px-2 py-1.5 mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
 				Submitted
 			</Title>
-			<p className="mt-6 text-base leading-7 text-gray-500">Thank you for applying to host. <br/> The Shelter team will contact you using your preferred contact method within <br /> 1-3 days.</p>
+			<p className="mt-6 text-base leading-7 text-gray-500">Thank you for applying to host. <br/> The Take Refuge team will contact you using your preferred contact method within <br /> 1-3 days.</p>
 			<div className="mt-10 flex items-center justify-center gap-x-6">
 			  <Link
 				href="/"

@@ -42,7 +42,7 @@ const HostInfo = () => {
 									Initial Email or Phone Call:
 								</strong>{" "}
 								After filling out your application, you will recieve an email or phone call from
-								the shelter team to your indicated preferred method of communication confirming that we have reviewed your application
+								the Take Refuge team to your indicated preferred method of communication confirming that we have reviewed your application
 								and providing details for next steps.
 							</span>
 						</li>
@@ -55,7 +55,7 @@ const HostInfo = () => {
 								<strong className="font-semibold text-gray-900 max-w-prose">
 									Secondary Live or Video Interview:
 								</strong>{" "}
-								The next step of the interview process typically involves a Live or Video call interview with the Shelter team to deter any form of human trafficking, fraud,
+								The next step of the interview process typically involves a Live or Video call interview with the Take Refuge team to deter any form of human trafficking, fraud,
 								or malicious intent. This interview will typically involve being asked questions about your identity, background, and getting a general understanding of why you would like to be a host.
 							</span>
 						</li>
@@ -68,7 +68,7 @@ const HostInfo = () => {
 								<strong className="font-semibold text-gray-900 max-w-prose">
 									Reviewal and Acceptance into the Host Database:
 								</strong>{" "}
-								After extensive reviewal by the Shelter team and rigorous security verification, you will either receive a confirmation of rejection or acceptance. If accepted, your host and
+								After extensive reviewal by the Take Refuge team and rigorous security verification, you will either receive a confirmation of rejection or acceptance. If accepted, your host and
 								contact information will be available in a secure database accessible only by NGOs and humanitarian workers.
 							</span>
 						</li>

@@ -8,8 +8,9 @@ import Script from "next/script";
 const links = [
 	// { name: "Refugee Resources", href: "/resources" },
 	{ name: "Host Now", href: "/hosts/apply" },
-	{ name: "Donate to Aid Orgs", href: "#response" },
+	// { name: "Donate to Aid Orgs", href: "#response" },
 	{ name: "Support Us", href: "/support"},
+	{ name: "Privacy Policy", href: "/privacypolicy"}
 ];
 
 export default function Home() {
@@ -40,7 +41,7 @@ export default function Home() {
 						Displaced people affected by conflict and natural disasters desperately need temporary housing.
 						</p>
 						<p className="mt-6 text-lg  max-w-prose leading-8 text-primary">
-						If you reside near a conflict or disaster area and have the capacity, please consider hosting displaced people in your home using the Shelter application.
+						If you reside near a conflict or disaster area and have the capacity, please consider hosting displaced people in your home using the Take Refuge application.
 						</p>
 					</div>
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
