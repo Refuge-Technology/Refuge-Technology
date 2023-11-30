@@ -9,12 +9,12 @@ export default function PrivacyPolicy() {
 					Privacy Policy
 				</Title>
 				<p className="mt-6 max-sm:mt-2 text-md leading-8 text-justify max-w-prose text-secondary border-none max-sm:justify-center max-sm:px-5">
-					Welcome to Shelter, a humanitarian web application dedicated
+					Welcome to Take Refuge, a humanitarian web application dedicated
 					to connecting hosts offering their homes as shelter with
 					refugees and displaced people around the world. This Privacy
 					Policy outlines how we collect, use, disclose, and protect
 					your information when you use our website and services. By
-					accessing or using Shelter, you agree to the terms outlined
+					accessing or using Take Refuge, you agree to the terms outlined
 					in this Privacy Policy.
 				</p>
 				<h1 className="mt-2 text-3xl text-secondary sm:text-2xl pb-5">
@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
 				</h1>
 				<ol className="max-sm:px-5">
 					<li className="py-1 text-md"> <strong> 1. User-Provided Information: </strong></li>
-					<p className="max-w-prose"> We collect information that you voluntarily provide to us when using Shelter, including: </p>
+					<p className="max-w-prose"> We collect information that you voluntarily provide to us when using Take Refuge, including: </p>
 				</ol>
 				<ol className="text-sm max-sm:px-5">
 					<li className="black"> Contact Information: Name, email address, phone number</li>
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
 				</ol>
 				<ol className="px-5">
 					<li className="py-1 text-md"> <strong> 2. Automatically Collected Information: </strong></li>
-				<p className=""> We collect information that you voluntarily provide to us when using Shelter, including: </p>
+				<p className=""> We collect information that you voluntarily provide to us when using Take Refuge, including: </p>
 				</ol>
 				<ol className="text-sm max-sm:px-5">
 					<li className="black max-w-prose"> Log Data: Information about your interactions with the website e.g., IP address, browser type, pages visited. </li>

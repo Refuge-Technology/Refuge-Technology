@@ -119,7 +119,7 @@ const ContactInfo = () => {
 							Email
 						</label>
 						<p className="text-gray-500">
-							Be contacted by the Shelter team and keep
+							Be contacted by the Take Refuge team and keep
 							communication over Email.
 						</p>
 					</div>
@@ -142,7 +142,7 @@ const ContactInfo = () => {
 							Phone Call
 						</label>
 						<p className="text-gray-500">
-							Be contacted by the Shelter team and communicate
+							Be contacted by the Take Refuge team and communicate
 							over phone calls. Note: Phone contact may be limited
 							by telecomm service in affected regions.
 						</p>
@@ -166,7 +166,7 @@ const ContactInfo = () => {
 							WhatsApp
 						</label>
 						<p className="text-gray-500">
-							Be contacted by the Shelter team and communicate
+							Be contacted by the Take Refuge team and communicate
 							over WhatsApp.
 						</p>
 					</div>

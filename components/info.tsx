@@ -15,7 +15,7 @@ export default function Info() {
 							<figure className="relative isolate text-white">
 								<HomeIcon className="h-20"/>
 								<blockquote className="mt-6 text-xl leading-8 text-white">
-									<p>Offer shelter. Offer humanity.</p>
+									<p>Offer refuge. Offer humanity.</p>
 								</blockquote>
 							</figure>
 						</div>
@@ -23,11 +23,11 @@ export default function Info() {
 					<div>
 						<div className="text-base leading-7 text-gray-700 lg:max-w-lg">
 							<h1 className="mt-2 text-3xl tracking-tigh sm:text-4xl">
-								What is Shelter?
+								What is Take Refuge?
 							</h1>
 							<div className="max-w-xl">
 								<p className="text-justify text-lg hyphens-auto mt-6 max-w-prose">
-								Shelter is an online application designed to connect hosts who have spare capacity in their homes with refugees who need a temporary place to stay. It has been directly inspired by TakeShelter, which was created 
+								Take Refuge is an online application designed to connect hosts who have spare capacity in their homes with refugees who need a temporary place to stay. It has been directly inspired by TakeShelter, which was created 
 								and maintained by InternetActivism.
 								</p>
 								<p className= "text-lg text-justify hyphens-auto mt-6 max-wprose">

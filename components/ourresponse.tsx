@@ -20,7 +20,7 @@ const OurResponse = () => {
 			</p>
         <div className="mt-6 text-lg leading-8 max-w-prose">
           <p>
-			The Shelter & Refuge Technology team is actively attempting to work with aid organizations on the ground in this region to provide much needed relief
+			The Take Refuge & Refuge Technology team is actively attempting to work with aid organizations on the ground in this region to provide much needed relief
 		  	and support in the form of shelter hosting and software solutions.
           </p>
 		  <p className="mt-6">
@@ -55,7 +55,7 @@ const OurResponse = () => {
 			</p>
         <div className="mt-6 text-lg leading-8 max-w-prose">
           <p>
-			The Shelter & Refuge Technology team is actively attempting to work with aid organizations on the ground in Sudan to provide much needed relief
+			The Take Refuge & Refuge Technology team is actively attempting to work with aid organizations on the ground in Sudan to provide much needed relief
 		  	and support in the form of shelter hosting and software solutions.
           </p>
 		  <p className="mt-6">
