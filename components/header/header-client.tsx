@@ -41,7 +41,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 		// 	current: false,
 		// },
 		{
-			name: "Host Now",
+			name: "How to Host",
 			href: "/hosts",
 			current: false,
 		},
@@ -117,7 +117,7 @@ const HeaderClient = ({ session }: { session: Session | null }) => {
 										<Link
 											type="button"
 											className="relative inline-flex items-center gap-x-1.5 rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-background-600 shadow hover:bg-background-900 hover:shadow-inset hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background-500"
-											href="/hosts"
+											href="/hosts/apply"
 										>
 											<PlusIcon
 												className="-ml-0.5 h-5 w-5"
