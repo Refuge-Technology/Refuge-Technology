@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## [Refuge Technology](https://refugetechnology.org) presents our humanitarian application Take Refuge.
-![TakeRefuge Logo](https://ibb.co/T1rp1WX)
+![TakeRefuge Logo](https://i.ibb.co/2S5mSZ2/Take-Refuge-Logo.png)
 
 ### Take Refuge
 
