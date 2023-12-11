@@ -7,11 +7,13 @@ const Footer = () => {
 				<div className="flex justify-center space-x-6 md:order-2">
 					<div className="flex items-center gap-0.5">
 						<div className="flex items-center">
+							<a href="/privacypolicy" target="_blank" className="underline"> Privacy Policy </a> &nbsp; &nbsp;
 							<h1 className="text-1xl  text-white">{"<"}</h1>
 							<HomeIcon className="h-5 -mt-1 text-white" />
 							<h1 className="text-1xl  text-white">{"/>"}</h1>
 						</div>
-						<p>- Take Refuge - a</p>
+						<p className="max-sm:hidden">- Take Refuge - a &nbsp;</p>
+						<p className="hidden max-sm:inline"> - a &nbsp;</p>
 						<a
 							href="https://refugetechnology.org"
 							className="hover-links underline underline-offset-2"
@@ -24,7 +26,7 @@ const Footer = () => {
 				</div>
 				<div className="mt-8 md:order-1 md:mt-0">
 					<p className="text-xs leading-5 text-center text-white">
-						&copy; 2023 Refuge Technology. <a href="/privacypolicy" target="_blank" className="underline"> Privacy Policy </a>
+						&copy; 2023 Refuge Technology. Not For Profit Organization - EIN 93-4682013
 					</p>
 				</div>
 			</div>
