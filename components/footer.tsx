@@ -26,7 +26,7 @@ const Footer = () => {
 				</div>
 				<div className="mt-8 md:order-1 md:mt-0">
 					<p className="text-xs leading-5 text-center text-white">
-						&copy; 2023 Refuge Technology. Not For Profit Organization - EIN 93-4682013
+						&copy; 2024 Refuge Technology. Not For Profit Organization - EIN 93-4682013
 					</p>
 				</div>
 			</div>
